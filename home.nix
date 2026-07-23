@@ -5,7 +5,7 @@
 		foot
 		dmenu
 		tofi
-		firefox
+		bluetui
 	];
 	
 	wayland.windowManager.sway = {
@@ -47,6 +47,19 @@
 		package = pkgs.adwaita-icon-theme;
 		name = "Adwaita";
 		size = 24;
+	};
+
+	gtk = {
+		enable = true;
+		gtk3.extraConfig = {
+			gtk-application-prefer-dark-theme = 1;
+		};
+	};
+
+	dconf.settings = {
+		"org/gnome/desktop/interface" = {
+			color-scheme = "prefer-dark";
+		};
 	};
 
 	programs.vscode = {

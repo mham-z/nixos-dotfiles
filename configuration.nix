@@ -41,9 +41,10 @@
 		};
 	};
 	
+	users.groups.keyd = {};
 	users.users.hamza = {
 		isNormalUser = true;
-		extraGroups = ["wheel" "video" "input"];
+		extraGroups = ["wheel" "video" "input" "keyd"];
 		packages = with pkgs; [
 			tree
 		];
@@ -70,26 +71,41 @@
 	xdg.portal = {
 		enable = true;
 		wlr.enable = true;
-		extraPortals = [ pkgs.xdg-desktop-portal-gtk ];
+		extraPortals = [pkgs.xdg-desktop-portal-gtk];
+		config.common.default = "gtk";
 	};
+
 	services.dbus.enable = true;
 	services.seatd.enable = true;
 	services.tuned.enable = true;
 	services.tuned.ppdSupport = true;
 	services.libinput.enable = true;
 	services.gnome.gnome-keyring.enable = true;
+	services.flatpak.enable = true;
+
 	security.polkit.enable = true;
 		services.pipewire = {
 		enable = true;
 		pulse.enable = true;
 	};
 
+	services.keyd = {
+		enable = true;
+		keyboards = {
+			default = {
+				ids = ["*"];
+				settings.main.capslock = "layer(meta)";
+			};
+		};
+	};
+	systemd.services.keyd.serviceConfig.CapabilityBoundingSet = [ "CAP_SETGID" ];
+
 	environment.systemPackages = with pkgs; [
 		vim
 		wget
+		lm_sensors
 		pciutils
-		bluetui
-		git
+		keyd
 	];
 
 	programs.mtr.enable = true;
