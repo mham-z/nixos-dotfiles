@@ -8,6 +8,7 @@
 		bluetui
 		
 		noto-fonts
+		noto-fonts-color-emoji
 		nerd-fonts.adwaita-mono
 		nerd-fonts.symbols-only
 		nerd-fonts.noto
