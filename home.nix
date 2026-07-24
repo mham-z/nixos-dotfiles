@@ -8,6 +8,7 @@
 		cava
 		cmd-polkit
 		udiskie
+		wl-clipboard
 		
 		noto-fonts
 		noto-fonts-color-emoji
@@ -21,6 +22,7 @@
 		./packages/sway/sway.nix
 		./packages/waybar/waybar.nix
 		./packages/tofi/tofi.nix
+		./packages/mako/mako.nix
 	];
 
 	services.flameshot.enable = true;
@@ -30,6 +32,7 @@
 		enable = true;
 		latitude = 25;
 		longitude = 67;
+		systemdTarget = "graphical-session.target";
 	};
 
 	services.udiskie = {

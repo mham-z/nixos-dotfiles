@@ -109,7 +109,17 @@
 		pciutils
 		keyd
 		powertop
+		wlock
 	];
+
+	security.wrappers.wlock = {
+		enable = true;
+		owner = "root";
+		group = "root";
+		setuid = true;
+		setgid = false;
+		source = "${pkgs.wlock}/bin/wlock";
+	};
 
 	programs.mtr.enable = true;
 	programs.gnupg.agent = {
