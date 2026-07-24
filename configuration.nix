@@ -41,6 +41,20 @@
 			nvidiaBusId = "PCI:1:0:0";
 		};
 	};
+
+	specialisation."iGPU-Only".configuration = {
+		system.nixos.tags = [ "igpu-only" ];
+		services.xserver.videoDrivers = [ "modesetting" ];
+		hardware.nvidia.nvidiaSettings = lib.mkForce false;
+		boot.blacklistedKernelModules = [ "nvidia" "nvidia_modeset" "nvidia_uvm" "nvidia_drm" "nouveau" ];
+		services.udev.extraRules = ''
+			ACTION=="add", SUBSYSTEM=="pci", ATTR{vendor}=="0x10de", ATTR{class}=="0x0c0330", ATTR{remove}="1"
+			ACTION=="add", SUBSYSTEM=="pci", ATTR{vendor}=="0x10de", ATTR{class}=="0x0c8000", ATTR{remove}="1"
+			ACTION=="add", SUBSYSTEM=="pci", ATTR{vendor}=="0x10de", ATTR{class}=="0x040300", ATTR{remove}="1"
+			ACTION=="add", SUBSYSTEM=="pci", ATTR{vendor}=="0x10de", ATTR{class}=="0x030000", ATTR{remove}="1"
+		'';
+	};
+
 	
 	users.groups.keyd = {};
 	users.users.hamza = {
@@ -73,6 +87,17 @@
 		enable = true;
 		wlr.enable = true;
 		extraPortals = [pkgs.xdg-desktop-portal-gtk];
+		
+		wlr.settings = {
+			screencast = {
+				max_fps = 60;
+				exec_before = "notify-send -h string:x-canonical-private-synchronous:screencast-alert \"Screencast\" \"Screencast started\"";
+				exec_after = "notify-send -h string:x-canonical-private-synchronous:screencast-alert \"Screencast\" \"Screencast ended\"";
+				chooser_type = "dmenu";
+				chooser_cmd = "tofi -c ~/.config/tofi/xdp-wlr";
+			};
+		};
+
 		config.common.default = "gtk";
 	};
 

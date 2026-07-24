@@ -9,6 +9,7 @@
 		cmd-polkit
 		udiskie
 		wl-clipboard
+		obs-studio
 		
 		noto-fonts
 		noto-fonts-color-emoji
