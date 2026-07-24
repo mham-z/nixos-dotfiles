@@ -6,7 +6,13 @@
 		dmenu
 		tofi
 		bluetui
+		
+		noto-fonts
+		nerd-fonts.adwaita-mono
+		nerd-fonts.symbols-only
+		nerd-fonts.noto
 	];
+
 	
 	wayland.windowManager.sway = {
 		enable = true;
