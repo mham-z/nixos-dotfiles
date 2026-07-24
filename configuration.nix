@@ -70,16 +70,23 @@
 		wrapperFeatures.gtk = true;
 	};
 
-	services.displayManager.ly = {
+	services.greetd = {
 		enable = true;
-		settings.animate = true;
+		settings = {
+			default_session = {
+				command = "${pkgs.tuigreet}/bin/tuigreet --time --remember --cmd 'systemd-run --user --scope --unit=sway sway'";
+				user = "greeter";
+			};
+		};
 	};
 
 	environment.sessionVariables = {
+		XDG_SESSION_DESKTOP = "sway";
+		XDG_CURRENT_DESKTOP = "sway";
 		XDG_SESSION_TYPE = "wayland";
 		SWAY_UNSUPPORTED_GPU = "1";
-		__GLX_VENDOR_LIBRARY_NAME = "nvidia";
-		GBM_BACKEND = "nvidia-drm";
+		#__GLX_VENDOR_LIBRARY_NAME = "nvidia";
+		#GBM_BACKEND = "nvidia-drm";
 		WLR_NO_HARDWARE_CURSORS = "1";
 	};
 
@@ -94,7 +101,7 @@
 				exec_before = "notify-send -h string:x-canonical-private-synchronous:screencast-alert \"Screencast\" \"Screencast started\"";
 				exec_after = "notify-send -h string:x-canonical-private-synchronous:screencast-alert \"Screencast\" \"Screencast ended\"";
 				chooser_type = "dmenu";
-				chooser_cmd = "tofi -c ~/.config/tofi/xdp-wlr";
+				chooser_cmd = "${pkgs.tofi}/bin/tofi -c ~/.config/tofi/xdp-wlr";
 			};
 		};
 
@@ -135,6 +142,8 @@
 		keyd
 		powertop
 		wlock
+		tuigreet
+		jq
 	];
 
 	security.wrappers.wlock = {
