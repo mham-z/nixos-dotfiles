@@ -1,11 +1,12 @@
-{ config, pkgs, ... }: {
+{config, pkgs, ...}: {
 	home.stateVersion = "26.05";
 
 	home.packages = with pkgs; [
 		foot
 		dmenu
-		tofi
 		bluetui
+		cava
+		cmd-polkit
 		
 		noto-fonts
 		noto-fonts-color-emoji
@@ -13,31 +14,15 @@
 		nerd-fonts.symbols-only
 		nerd-fonts.noto
 	];
+	fonts.fontconfig.enable = true;
 
-	
-	wayland.windowManager.sway = {
-		enable = true;
-		
-		systemd = {
-			enable = true;
-			variables = ["--all"];
-		};
+	imports = [
+		./packages/sway/sway.nix
+		./packages/waybar/waybar.nix
+		./packages/tofi/tofi.nix
+	];
 
-		config = {
-			modifier = "Mod4";
-			terminal = "foot";
-
-			startup = [
-				{command = "systemctl --user start sway-session.target";}
-			];
-		};
-	};
-
-	programs.waybar = {
-		enable = true;
-		systemd.enable = true;
-		systemd.targets = ["sway-session.target"];
-	};
+	services.flameshot.enable = true;
 
 	programs.git = {
 		enable = true;
@@ -50,7 +35,6 @@
 	home.pointerCursor = {
 		gtk.enable = true;
 		x11.enable = true;
-		sway.enable = true;
 		package = pkgs.adwaita-icon-theme;
 		name = "Adwaita";
 		size = 24;

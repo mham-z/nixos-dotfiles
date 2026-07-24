@@ -107,6 +107,7 @@
 		lm_sensors
 		pciutils
 		keyd
+		powertop
 	];
 
 	programs.mtr.enable = true;

@@ -1,0 +1,78 @@
+text-color = #FFFFFF
+
+prompt-color = #eb6f92
+prompt-background = #00000000
+prompt-background-padding = 0
+prompt-background-corner-radius = 0
+
+placeholder-color = #ebbcba99
+placeholder-background = #00000000
+placeholder-background-padding = 0
+placeholder-background-corner-radius = 0
+
+input-color = #ebbcba
+input-background = #00000000
+input-background-padding = 0
+input-background-corner-radius = 0
+
+default-result-background = #00000000
+#default-background-padding = 0,6,1,6
+default-result-background-corner-radius = 0
+
+selection-color = #191724
+selection-background = #ebbcba
+selection-background-padding = 6
+selection-background-corner-radius = 0
+
+selection-match-color = #00000000
+
+text-cursor-style = bar
+text-cursor-corner-radius = 0
+
+prompt-padding = 4
+placeholder-text = "Enter your password"
+
+num-results = 0
+result-spacing = 12
+horizontal = true
+min-input-width = 0
+
+include = ./font
+include = ./topsize
+
+background-color = #26233a
+outline-width = 0
+outline-color = #080800
+border-width = 0
+border-color = #c4a7e719
+corner-radius = 0
+
+clip-to-padding = false
+scale = true
+
+output = ""
+anchor = top
+exclusive-zone = -1
+
+margin-top = 0
+margin-bottom = 0
+margin-left = 10
+margin-right = 10
+
+hide-cursor = false
+text-cursor = false
+
+history = false
+matching-algorithm = normal
+require-match = false
+auto-accept-single = false
+
+hide-input = true
+hidden-character = "•"
+
+physical-keybindings = true
+
+print-index = false
+late-keyboard-init = false
+multi-instance = true
+ascii-input = true
