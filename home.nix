@@ -7,6 +7,7 @@
 		bluetui
 		cava
 		cmd-polkit
+		udiskie
 		
 		noto-fonts
 		noto-fonts-color-emoji
@@ -23,6 +24,19 @@
 	];
 
 	services.flameshot.enable = true;
+	services.cliphist.enable = true;
+
+	services.wlsunset = {
+		enable = true;
+		latitude = 25;
+		longitude = 67;
+	};
+
+	services.udiskie = {
+		enable = true;
+		automount = true;
+		tray = "always";
+	};
 
 	programs.git = {
 		enable = true;
