@@ -7,6 +7,7 @@
 		cava
 		cmd-polkit
 		udiskie
+		wlsunset
 		wl-clipboard
 		nautilus
 		
@@ -19,22 +20,16 @@
 	fonts.fontconfig.enable = true;
 
 	imports = [
-		./packages/sway/sway.nix
-		./packages/waybar/waybar.nix
-		./packages/tofi/tofi.nix
-		./packages/mako/mako.nix
-		./packages/fastfetch/fastfetch.nix
+		./modules/sway/sway.nix
+		./modules/waybar/waybar.nix
+		./modules/tofi/tofi.nix
+		./modules/mako/mako.nix
+		./modules/fastfetch/fastfetch.nix
+		./modules/autostart.nix
 	];
 
 	services.flameshot.enable = true;
 	services.cliphist.enable = true;
-
-	services.wlsunset = {
-		enable = true;
-		latitude = 25;
-		longitude = 67;
-		systemdTarget = "sway-session.target";
-	};
 
 	services.udiskie = {
 		enable = true;

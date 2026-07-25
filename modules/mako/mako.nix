@@ -1,10 +1,13 @@
 {pkgs, ...}: {
 	home.packages = with pkgs; [
 		libnotify
-		mako
 	];
 
-  xdg.configFile = {
+	services.mako = {
+		enable = true;
+	};
+
+	xdg.configFile = {
 		"mako" = {
 			source = ./.;
 			recursive = true;
