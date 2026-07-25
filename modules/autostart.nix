@@ -1,4 +1,4 @@
-{...}:
+{pkgs, ...}:
 let
 	mkAutostart = description: command: {
 		Unit = {
@@ -8,7 +8,7 @@ let
 		};
 
 		Service = {
-			ExecStart = "uwsm app -- ${command}";
+			ExecStart = "${pkgs.uwsm}/bin/uwsm app -- ${command}";
 			Restart = "on-failure";
 		};
 
@@ -16,7 +16,7 @@ let
 	};
 in {
 	systemd.user.services = {
-		vesktop = mkAutostart "Vesktop" "vesktop";
+		vesktop = mkAutostart "Vesktop" "flatpak run dev.vencord.Vesktop";
 		zapzap = mkAutostart "ZapZap" "flatpak run com.rtosta.zapzap";
 		wlsunset = mkAutostart "wlsunset" "wlsunset -l 25 -L 67";
 	};
