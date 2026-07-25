@@ -43,10 +43,10 @@
 	};
 
 	specialisation."iGPU-Only".configuration = {
-		system.nixos.tags = [ "igpu-only" ];
-		services.xserver.videoDrivers = [ "modesetting" ];
+		system.nixos.tags = ["igpu-only"];
+		services.xserver.videoDrivers = ["modesetting"];
 		hardware.nvidia.nvidiaSettings = lib.mkForce false;
-		boot.blacklistedKernelModules = [ "nvidia" "nvidia_modeset" "nvidia_uvm" "nvidia_drm" "nouveau" ];
+		boot.blacklistedKernelModules = ["nvidia" "nvidia_modeset" "nvidia_uvm" "nvidia_drm" "nouveau"];
 		services.udev.extraRules = ''
 			ACTION=="add", SUBSYSTEM=="pci", ATTR{vendor}=="0x10de", ATTR{class}=="0x0c0330", ATTR{remove}="1"
 			ACTION=="add", SUBSYSTEM=="pci", ATTR{vendor}=="0x10de", ATTR{class}=="0x0c8000", ATTR{remove}="1"
@@ -136,7 +136,7 @@
 			};
 		};
 	};
-	systemd.services.keyd.serviceConfig.CapabilityBoundingSet = [ "CAP_SETGID" ];
+	systemd.services.keyd.serviceConfig.CapabilityBoundingSet = ["CAP_SETGID"];
 
 	environment.systemPackages = with pkgs; [
 		vim
