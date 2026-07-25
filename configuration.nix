@@ -139,7 +139,11 @@
 	systemd.services.keyd.serviceConfig.CapabilityBoundingSet = ["CAP_SETGID"];
 
 	environment.systemPackages = with pkgs; [
-		vim
+		(vim.overrideAttrs (oldAttrs: {
+			postInstall = (oldAttrs.postInstall or "") + ''
+				rm $out/share/applications/gvim.desktop
+			'';
+		}))
 		wget
 		lm_sensors
 		pciutils
