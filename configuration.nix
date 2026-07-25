@@ -180,6 +180,7 @@
 			bindkey "\e[1;5D" backward-word
 			bindkey "\e[1;5C" forward-word
 		'';
+		setOptions = ["AUTOCD"];
 	};
 
 	security.wrappers.wlock = {
