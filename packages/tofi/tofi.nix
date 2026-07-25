@@ -11,7 +11,7 @@ let
 
 	stowEntries = builtins.listToAttrs (builtins.map (filename: {
 		name = "tofi/${filename}";
-		value = { source = ./. + "/${filename}"; };
+		value = {source = ./. + "/${filename}";};
 	}) stowFiles);
 
 	fontEntry = {
