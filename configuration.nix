@@ -92,7 +92,7 @@
 		enable = true;
 		settings = {
 			default_session = {
-				command = "${pkgs.tuigreet}/bin/tuigreet --time --remember --cmd 'systemd-run --user --scope --unit=sway sway'";
+				command = "${pkgs.tuigreet}/bin/tuigreet --time --remember --cmd 'systemd-run --user --scope --unit=\"sway-$(date +%s)\" sway'";
 				user = "greeter";
 			};
 		};

@@ -33,13 +33,23 @@
 		enable = true;
 		latitude = 25;
 		longitude = 67;
-		systemdTarget = "graphical-session.target";
+		systemdTarget = "sway-session.target";
 	};
 
 	services.udiskie = {
 		enable = true;
 		automount = true;
 		tray = "always";
+	};
+
+	systemd.user.targets.nixos-autostart = {
+		Unit = {
+			Description = "User XDG Autostart Wrapper";
+			Requires = [ "xdg-desktop-autostart.target" ];
+		};
+		Install = {
+			WantedBy = [ "sway-session.target" ];
+		};
 	};
 
 	programs.foot = {
