@@ -30,7 +30,7 @@
 		modesetting.enable = true;
 		powerManagement.enable = true;
 		powerManagement.finegrained = true;
-		open = true;
+		open = false;
 		nvidiaSettings = true;
 		prime = {
 			offload = {
@@ -147,6 +147,13 @@
 		tuigreet
 		jq
 	];
+
+	programs.obs-studio = {
+		enable = true;
+		package = (pkgs.obs-studio.override {
+			cudaSupport = true;
+		});
+	};
 
 	programs.zsh = {
 		enable = true;
