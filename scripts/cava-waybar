@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-# battery
+sleep 3
 if grep -q "0" /sys/class/power_supply/AC/online 2>/dev/null; then
     echo ""
     exit 0
