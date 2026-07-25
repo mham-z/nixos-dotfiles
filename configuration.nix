@@ -146,6 +146,22 @@
 		wlock
 		tuigreet
 		jq
+
+		(pkgs.writeScriptBin "dgpu-mode" ''
+		#!/bin/sh
+		sudo modprobe think-lmi
+		echo "DiscreteGfx" | sudo tee /sys/class/firmware-attributes/thinklmi/attributes/GraphicsDevice/current_value
+		sudo ${pkgs.grub2}/bin/grub-reboot 0
+		echo "Discrete graphics mode is active. You may reboot now for the changes to take effect."
+		'')
+
+		(pkgs.writeScriptBin "igpu-mode" ''
+		#!/bin/sh
+		sudo modprobe think-lmi
+		echo "SwitchableGfx" | sudo tee /sys/class/firmware-attributes/thinklmi/attributes/GraphicsDevice/current_value
+		sudo ${pkgs.grub2}/bin/grub-reboot 1
+		echo "Integrated graphics mode is active. You may reboot now for the changes to take effect."
+		'')
 	];
 
 	programs.obs-studio = {
