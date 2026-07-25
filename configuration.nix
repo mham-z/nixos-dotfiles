@@ -42,17 +42,33 @@
 		};
 	};
 
+	environment.sessionVariables = {
+		XDG_SESSION_DESKTOP = "sway";
+		XDG_CURRENT_DESKTOP = "sway";
+		XDG_SESSION_TYPE = "wayland";
+		SWAY_UNSUPPORTED_GPU = "1";
+		WLR_NO_HARDWARE_CURSORS = "1";
+		__GLX_VENDOR_LIBRARY_NAME = "nvidia";
+		GBM_BACKEND = "nvidia-drm";
+	};
+
 	specialisation."iGPU-Only".configuration = {
 		system.nixos.tags = ["igpu-only"];
 		services.xserver.videoDrivers = ["modesetting"];
 		hardware.nvidia.nvidiaSettings = lib.mkForce false;
 		boot.blacklistedKernelModules = ["nvidia" "nvidia_modeset" "nvidia_uvm" "nvidia_drm" "nouveau"];
+
 		services.udev.extraRules = ''
 			ACTION=="add", SUBSYSTEM=="pci", ATTR{vendor}=="0x10de", ATTR{class}=="0x0c0330", ATTR{remove}="1"
 			ACTION=="add", SUBSYSTEM=="pci", ATTR{vendor}=="0x10de", ATTR{class}=="0x0c8000", ATTR{remove}="1"
 			ACTION=="add", SUBSYSTEM=="pci", ATTR{vendor}=="0x10de", ATTR{class}=="0x040300", ATTR{remove}="1"
 			ACTION=="add", SUBSYSTEM=="pci", ATTR{vendor}=="0x10de", ATTR{class}=="0x030000", ATTR{remove}="1"
 		'';
+
+		environment.sessionVariables = {
+			__GLX_VENDOR_LIBRARY_NAME = lib.mkForce null;
+			GBM_BACKEND = lib.mkForce null;
+		};
 	};
 
 	
@@ -80,16 +96,6 @@
 				user = "greeter";
 			};
 		};
-	};
-
-	environment.sessionVariables = {
-		XDG_SESSION_DESKTOP = "sway";
-		XDG_CURRENT_DESKTOP = "sway";
-		XDG_SESSION_TYPE = "wayland";
-		SWAY_UNSUPPORTED_GPU = "1";
-		#__GLX_VENDOR_LIBRARY_NAME = "nvidia";
-		#GBM_BACKEND = "nvidia-drm";
-		WLR_NO_HARDWARE_CURSORS = "1";
 	};
 
 	xdg.portal = {
