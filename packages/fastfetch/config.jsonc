@@ -1,0 +1,75 @@
+{
+    "$schema": "https://github.com/fastfetch-cli/fastfetch/raw/dev/doc/json_schema.json",
+    "logo": null,
+    "display": {
+        "separator": " • "
+    },
+    "modules": [
+        {
+            "type": "os",
+            "key": " ",
+            "outputColor": "bright_red"
+        },
+        {
+            "type": "kernel",
+            "key": "KER",
+            "keyColor": "31"
+        },
+        {
+            "type": "packages",
+            "key": "PKG",
+            "keyColor": "31"
+        },
+        {
+            "type": "shell",
+            "key": "SH ",
+            "keyColor": "31"
+        },
+        {
+            "type": "terminal",
+            "key": "TER",
+            "keyColor": "31"
+        },
+        {
+            "type": "wm",
+            "key": "WM ",
+            "keyColor": "31"
+        },
+		{
+			"key": "UP ",
+		   "keyColor": "31",
+			"type": "uptime"
+		},
+		{
+			"key": "SCR",
+			"keyColor": "31",
+			"type": "display"
+		},
+		{
+			"key": "CPU",
+			"keyColor": "31",
+			"type": "cpu"
+		},
+		{
+			"key": "GPU",
+			"keyColor": "31",
+			"type": "gpu"
+		},
+		{
+			"key": "RAM",
+			"keyColor": "31",
+			"type": "memory"
+		},
+		{
+			"key": "DSK",
+			"type": "disk",
+			"keyColor": "31",
+			"folders": "/"
+		},
+		{
+			"key": "BAT",
+			"keyColor": "31",
+			"type": "battery"
+		}
+    ]
+}

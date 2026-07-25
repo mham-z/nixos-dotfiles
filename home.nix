@@ -23,6 +23,7 @@
 		./packages/waybar/waybar.nix
 		./packages/tofi/tofi.nix
 		./packages/mako/mako.nix
+		./packages/fastfetch/fastfetch.nix
 	];
 
 	services.flameshot.enable = true;
