@@ -63,6 +63,8 @@
 		packages = with pkgs; [
 			tree
 		];
+		shell = pkgs.zsh;
+		useDefaultShell = false;
 	};
 
 	programs.sway = {
@@ -145,6 +147,17 @@
 		tuigreet
 		jq
 	];
+
+	programs.zsh = {
+		enable = true;
+		enableCompletion = true; 
+		autosuggestions.enable = true;
+		syntaxHighlighting.enable = true;
+		interactiveShellInit = ''
+			bindkey "\e[1;5D" backward-word
+			bindkey "\e[1;5C" forward-word
+		'';
+	};
 
 	security.wrappers.wlock = {
 		enable = true;
