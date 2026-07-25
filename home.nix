@@ -8,6 +8,7 @@
 		cmd-polkit
 		udiskie
 		wl-clipboard
+		nautilus
 		
 		noto-fonts
 		noto-fonts-color-emoji
@@ -120,4 +121,6 @@
 		enable = true;
 		package = pkgs.vscode-insiders;
 	};
+
+	xdg.enable = true;
 }

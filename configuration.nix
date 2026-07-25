@@ -116,8 +116,10 @@
 	services.tuned.ppdSupport = true;
 	services.libinput.enable = true;
 	services.udisks2.enable = true;
+	services.gvfs.enable = true;
 	services.gnome.gnome-keyring.enable = true;
 	services.flatpak.enable = true;
+	programs.dconf.enable = true;
 
 	security.polkit.enable = true;
 		services.pipewire = {
