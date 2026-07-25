@@ -42,16 +42,6 @@
 		tray = "always";
 	};
 
-	systemd.user.targets.nixos-autostart = {
-		Unit = {
-			Description = "User XDG Autostart Wrapper";
-			Requires = [ "xdg-desktop-autostart.target" ];
-		};
-		Install = {
-			WantedBy = [ "sway-session.target" ];
-		};
-	};
-
 	programs.foot = {
 		enable = true;
 		

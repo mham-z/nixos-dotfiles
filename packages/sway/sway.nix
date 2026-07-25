@@ -3,10 +3,6 @@
 		enable = true;
 		package = pkgs.sway;
 		config = null;
-		systemd = {
-			enable = true;
-			variables = ["--all"];
-		};
 	};
 
 	xdg.configFile = {

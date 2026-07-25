@@ -92,9 +92,19 @@
 		enable = true;
 		settings = {
 			default_session = {
-				command = "${pkgs.tuigreet}/bin/tuigreet --time --remember --cmd 'systemd-run --user --scope --unit=\"sway-$(date +%s)\" sway'";
+				command = "${pkgs.tuigreet}/bin/tuigreet --time --remember --cmd 'uwsm start sway'";
 				user = "greeter";
 			};
+		};
+	};
+
+	programs.uwsm = {
+		enable = true;
+
+		waylandCompositors.sway = {
+			prettyName = "Sway";
+			comment = "Sway compositor managed by UWSM";
+			binPath = "${pkgs.sway}/bin/sway";
 		};
 	};
 
