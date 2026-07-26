@@ -43,11 +43,16 @@
 	};
 
 	environment.sessionVariables = {
+		EDITOR = "vim";
+		VISUAL = "vim";
+		PAGER = "less";
+		
 		XDG_SESSION_DESKTOP = "sway";
 		XDG_CURRENT_DESKTOP = "sway";
 		XDG_SESSION_TYPE = "wayland";
 		SWAY_UNSUPPORTED_GPU = "1";
 		WLR_NO_HARDWARE_CURSORS = "1";
+
 		__GLX_VENDOR_LIBRARY_NAME = "nvidia";
 		GBM_BACKEND = "nvidia-drm";
 	};
@@ -168,6 +173,9 @@
 		wlock
 		tuigreet
 		jq
+		libqalculate
+		htop
+		lsof
 
 		(pkgs.writeScriptBin "dgpu-mode" ''
 		#!/bin/sh
