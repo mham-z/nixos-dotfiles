@@ -29,7 +29,21 @@
 		./modules/autostart.nix
 	];
 
-	services.flameshot.enable = true;
+	services.flameshot = {
+		enable = true;
+		settings = {
+			General = {
+				savePath = "/home/hamza/Pictures/Flameshot";
+				disabledTrayIcon = false;
+				showStartupLaunchMessage = false;
+				saveAsFileExtension = ".png";
+				showDesktopNotification = true;
+				useGrimAdapter = true;
+				disabledGrimWarning = true;
+			};
+		};
+	};
+
 	services.cliphist.enable = true;
 
 	services.udiskie = {
