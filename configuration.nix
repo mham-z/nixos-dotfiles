@@ -221,6 +221,10 @@
 		source = "${pkgs.wlock}/bin/wlock";
 	};
 
+	security.sudo.extraConfig = ''
+		Defaults passprompt="sudo: authenticating for user %u: "
+	'';
+
 	programs.mtr.enable = true;
 	programs.gnupg.agent = {
 	  enable = true;
