@@ -205,6 +205,13 @@
 		setOptions = ["AUTOCD"];
 	};
 
+	programs.starship = {
+			enable = true;
+			settings = {
+				add_newline = false;
+			};
+	};
+
 	security.wrappers.wlock = {
 		enable = true;
 		owner = "root";

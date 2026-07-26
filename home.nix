@@ -91,6 +91,12 @@
 		};
 	};
 
+	programs.nix-your-shell = {
+		enable = true;
+		enableZshIntegration = true;
+		nix-output-monitor.enable = true;
+	};
+
 	home.pointerCursor = {
 		gtk.enable = true;
 		x11.enable = true;
