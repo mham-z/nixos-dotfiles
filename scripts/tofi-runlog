@@ -8,7 +8,7 @@ LOG_FILE="$LOG_DIR/tofi-runlog-$(date +%Y-%m-%d-at-%H-%M-%S).log"
 CHOICE=$(tofi-run -c ~/.config/tofi/run) 
 
 if [ -n "$CHOICE" ]; then
-	bash -c '
+	uwsm app -- bash -c '
 		eval "$1" 2>&1 | tee -a "$2" &
 		CHILD_PID=$!
 		echo "-- Running <$1> with PID $CHILD_PID --" >> "$2"

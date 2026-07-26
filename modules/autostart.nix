@@ -19,5 +19,6 @@ in {
 		vesktop = mkAutostart "Vesktop" "flatpak run dev.vencord.Vesktop";
 		zapzap = mkAutostart "ZapZap" "flatpak run com.rtosta.zapzap";
 		wlsunset = mkAutostart "wlsunset" "wlsunset -l 25 -L 67";
+		footserver = mkAutostart "Foot Server" "foot --server";
 	};
 }
