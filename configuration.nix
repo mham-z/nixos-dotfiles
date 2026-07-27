@@ -234,7 +234,8 @@ iGPU-only specialization
 			la = "ls -lAh";
 			gclone = "git clone --depth=1";
 			root = "sudo -i";
-			rs = 
+			rs = "sudo nixos-rebuild switch --flake ~/dotfiles/#nixos";
+			rb = "sudo nixos-rebuild boot --flake ~/dotfiles/#nixos";
 		};
 
 		setOptions = ["AUTOCD"];
