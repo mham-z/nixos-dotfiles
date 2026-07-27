@@ -93,16 +93,6 @@
 		wrapperFeatures.gtk = true;
 	};
 
-	services.greetd = {
-		enable = true;
-		settings = {
-			default_session = {
-				command = "${pkgs.tuigreet}/bin/tuigreet --time --remember --cmd 'uwsm start sway'";
-				user = "greeter";
-			};
-		};
-	};
-
 	programs.uwsm = {
 		enable = true;
 
@@ -206,7 +196,15 @@
 		enableCompletion = true; 
 		autosuggestions.enable = true;
 		syntaxHighlighting.enable = true;
+
+		loginShellInit = ''
+		if [ -z "$DISPLAY" ] && [ "$XDG_VTNR" = "1" ] && uwsm check may-start; then
+			exec uwsm start sway
+		fi
+		'';
+
 		interactiveShellInit = ''
+			bindkey -e
 			bindkey "\e[1;5D" backward-word
 			bindkey "\e[1;5C" forward-word
 		'';
