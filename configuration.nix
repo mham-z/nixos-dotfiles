@@ -229,6 +229,14 @@ iGPU-only specialization
 			bindkey "\e[1;5D" backward-word
 			bindkey "\e[1;5C" forward-word
 		'';
+
+		shellAliases = {
+			la = "ls -lAh";
+			gclone = "git clone --depth=1";
+			root = "sudo -i";
+			rs = 
+		};
+
 		setOptions = ["AUTOCD"];
 	};
 
