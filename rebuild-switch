@@ -1,3 +1,0 @@
-#!/usr/bin/env bash
-cd ~/dotfiles/
-sudo nixos-rebuild switch --flake .#nixos
