@@ -6,6 +6,8 @@
 
 		nixpkgs-unstable.url = "github:nixos/nixpkgs/nixos-unstable";
 
+		nixcord.url = "github:4evy/nixcord";
+
 		home-manager.url = "github:nix-community/home-manager/release-26.05";
 		home-manager.inputs.nixpkgs.follows = "nixpkgs";
 

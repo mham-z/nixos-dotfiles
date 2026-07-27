@@ -26,6 +26,7 @@
 		./modules/mako/mako.nix
 		./modules/fastfetch/fastfetch.nix
 		./modules/foot/foot.nix
+		./modules/nixcord/nixcord.nix
 		./modules/autostart.nix
 	];
 
