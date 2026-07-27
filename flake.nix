@@ -16,7 +16,7 @@
 	};
 
 	outputs = {self, nixpkgs, home-manager, vscode-insiders, ...}@inputs: {
-		nixosConfigurations.hamza = nixpkgs.lib.nixosSystem {
+		nixosConfigurations.nixos = nixpkgs.lib.nixosSystem {
 			system = "x86_64-linux";
 			specialArgs = {inherit inputs;}; 
 			modules = [
