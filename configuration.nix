@@ -22,6 +22,7 @@
 	};
 
 	boot.kernelPackages = pkgs.linuxPackages_latest;
+	boot.kernel.sysctl."kernel.sysrq" = 502;
 
 	networking.networkmanager.enable = true;
 	time.timeZone = "Asia/Karachi";
