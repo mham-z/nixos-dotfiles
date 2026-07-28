@@ -16,6 +16,7 @@ let
 	};
 in {
 	systemd.user.services = {
+		zen = mkAutostart "Zen Browser" "flatpak run app.zen_browser.zen";
 		vesktop = mkAutostart "Equibop" "equibop";
 		zapzap = mkAutostart "ZapZap" "flatpak run com.rtosta.zapzap";
 		wlsunset = mkAutostart "wlsunset" "wlsunset -l 25 -L 67";
