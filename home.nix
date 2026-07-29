@@ -94,4 +94,14 @@
 	};
 
 	xdg.enable = true;
+	xdg.terminal-exec = {
+		enable = true;
+		settings = {
+			default = ["foot.desktop"];
+		};
+	};
+
+	home.sessionVariables = {
+		TERMINAL = "foot";
+	};
 }
