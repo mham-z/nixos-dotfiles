@@ -2,7 +2,6 @@
 	home.stateVersion = "26.05";
 
 	home.packages = with pkgs; [
-		dmenu
 		bluetui
 		cava
 		cmd-polkit
