@@ -65,20 +65,19 @@
 		GBM_BACKEND = "nvidia-drm";
 	};
 
-	environment.etc."issue".text = ''
-Welcome to NixOS ${config.system.nixos.version} (\m) - \l
-Kernel version \r
-Default specialization
-
-'';
+	environment.etc."issue".text = builtins.concatStringsSep "\n" [
+		"Welcome to NixOS ${config.system.nixos.version} (\\m) - \\l"
+		"Kernel version \\r"
+		"Default specialization" "" ""
+	];
 
 	specialisation."iGPU-Only".configuration = {
-		environment.etc."issue".text = ''
-Welcome to NixOS ${config.system.nixos.version} (\m) - \l
-Kernel version \r
-iGPU-only specialization
+		environment.etc."issue".text = lib.mkForce (builtins.concatStringsSep "\n" [
+			"Welcome to NixOS ${config.system.nixos.version} (\\m) - \\l"
+			"Kernel version \\r"
+			"iGPU-only specialization" "" ""
+		]);
 
-'';
 
 		system.nixos.tags = ["igpu-only"];
 		services.xserver.videoDrivers = ["modesetting"];
