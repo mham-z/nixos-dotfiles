@@ -2,13 +2,15 @@
 	home.stateVersion = "26.05";
 
 	home.packages = with pkgs; [
-		bluetui
 		cava
 		cmd-polkit
 		udiskie
 		wlsunset
 		wl-clipboard
+
 		nautilus
+		bluetui
+		aseprite
 		
 		noto-fonts
 		noto-fonts-color-emoji
