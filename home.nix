@@ -8,6 +8,7 @@
 		wlsunset
 		wl-clipboard
 
+		thunderbird
 		nautilus
 		bluetui
 		aseprite
