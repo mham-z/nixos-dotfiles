@@ -109,7 +109,7 @@
 	users.groups.keyd = {};
 	users.users.hamza = {
 		isNormalUser = true;
-		extraGroups = ["wheel" "video" "input" "keyd"];
+		extraGroups = ["wheel" "video" "input" "keyd" "libvirtd"];
 		packages = with pkgs; [
 			tree
 		];
@@ -196,6 +196,8 @@
 		htop
 		lsof
 
+		dnsmasq
+
 		(pkgs.writeScriptBin "dgpu-mode" ''
 		#!/bin/sh
 		sudo modprobe think-lmi
@@ -244,6 +246,7 @@
 			root = "sudo -i";
 			rs = "sudo nixos-rebuild switch --flake ~/dotfiles/#nixos";
 			rb = "sudo nixos-rebuild boot --flake ~/dotfiles/#nixos";
+			code = "code-insiders";
 		};
 
 		setOptions = ["AUTOCD"];
@@ -275,11 +278,18 @@
 	  enableSSHSupport = true;
 	};
 
+	virtualisation.libvirtd = {
+		enable = true;
+		qemu.vhostUserPackages = with pkgs; [virtiofsd];
+	};
+	programs.virt-manager.enable = true;
+
 	services.openssh.enable = true;
 	services.openssh.openFirewall = true; 
 
 	networking.firewall.allowedTCPPorts = [];
 	networking.firewall.allowedUDPPorts = [];
+	networking.firewall.trustedInterfaces = ["virbr0"];
 
 	system.stateVersion = "26.05"; # DO NOT CHANGE
 }
