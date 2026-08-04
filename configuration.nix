@@ -97,15 +97,6 @@
 		};
 	};
 
-	services.kmscon = {
-		enable = true;
-		hwRender = true;
-		extraConfig = ''
-			font-name=NotoSansMono Nerd Font
-			font-size=24
-		'';
-	};
-	
 	users.groups.keyd = {};
 	users.users.hamza = {
 		isNormalUser = true;
