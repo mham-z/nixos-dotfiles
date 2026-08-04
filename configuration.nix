@@ -186,6 +186,7 @@
 		libqalculate
 		htop
 		lsof
+		aria2
 
 		dnsmasq
 
@@ -245,6 +246,7 @@
 			rs = "sudo nixos-rebuild switch --flake ~/dotfiles/#nixos";
 			rb = "sudo nixos-rebuild boot --flake ~/dotfiles/#nixos";
 			code = "code-insiders";
+			dl = "aria2c -d ~/Downloads/aria2 --split=16";
 		};
 
 		setOptions = ["AUTOCD"];
