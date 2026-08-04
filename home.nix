@@ -13,6 +13,8 @@
 		bluetui
 		aseprite
 		blender
+
+		prismlauncher
 		
 		noto-fonts
 		noto-fonts-color-emoji
