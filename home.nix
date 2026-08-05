@@ -13,6 +13,7 @@
 		nautilus
 		bluetui
 		aseprite
+		krita
 		blender
 
 		prismlauncher
