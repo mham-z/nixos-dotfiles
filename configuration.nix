@@ -287,7 +287,7 @@
 	services.openssh.enable = true;
 	services.openssh.openFirewall = true; 
 
-	networking.firewall.allowedTCPPorts = [];
+	networking.firewall.allowedTCPPorts = [5900];
 	networking.firewall.allowedUDPPorts = [];
 	networking.firewall.trustedInterfaces = ["virbr0"];
 

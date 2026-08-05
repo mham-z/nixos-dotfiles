@@ -7,6 +7,7 @@
 		udiskie
 		wlsunset
 		wl-clipboard
+		wayvnc
 
 		thunderbird
 		nautilus
