@@ -94,9 +94,7 @@
 			color-scheme = "prefer-dark";
 		};
 	};
-
-	programs.keepassxc.enable = true;
-
+	
 	programs.vscode = {
 		enable = true;
 		package = pkgs.vscode-insiders;
