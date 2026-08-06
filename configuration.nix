@@ -187,6 +187,7 @@
 		htop
 		lsof
 		aria2
+		python3
 
 		dnsmasq
 
