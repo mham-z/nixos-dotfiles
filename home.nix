@@ -10,7 +10,7 @@
 		wayvnc
 
 		thunderbird
-		nautilus
+		nemo-with-extensions
 		bluetui
 		aseprite
 		krita
