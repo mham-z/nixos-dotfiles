@@ -18,6 +18,12 @@
 		blender
 
 		prismlauncher
+
+		xournalpp
+		obsidian
+		(texlive.combine {
+			inherit (texlive) scheme-medium standalone scontents;
+		})
 	];
 	fonts.fontconfig.enable = true;
 
@@ -105,5 +111,6 @@
 
 	home.sessionVariables = {
 		TERMINAL = "foot";
+		GDK_CORE_DEVICE_EVENTS = "1";
 	};
 }
