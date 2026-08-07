@@ -79,6 +79,7 @@
 			webScreenShareFixes.enable = true;
 			whoReacted.enable = true;
 			youtubeAdblock.enable = true;
+			gameActivityToggle.enable = true;
 		};
 	};
 }
