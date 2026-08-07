@@ -208,6 +208,15 @@
 		'')
 	];
 
+	fonts.packages = with pkgs; [
+		noto-fonts
+		noto-fonts-color-emoji
+		nerd-fonts.adwaita-mono
+		nerd-fonts.symbols-only
+		nerd-fonts.noto
+	];
+	fonts.fontconfig.enable = true;
+
 	programs.obs-studio = {
 		enable = true;
 		package = (pkgs.obs-studio.override {

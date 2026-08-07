@@ -14,15 +14,10 @@
 		bluetui
 		aseprite
 		krita
+		inkscape
 		blender
 
 		prismlauncher
-		
-		noto-fonts
-		noto-fonts-color-emoji
-		nerd-fonts.adwaita-mono
-		nerd-fonts.symbols-only
-		nerd-fonts.noto
 	];
 	fonts.fontconfig.enable = true;
 
