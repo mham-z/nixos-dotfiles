@@ -21,6 +21,7 @@
 
 		xournalpp
 		obsidian
+		texstudio
 		(texlive.combine {
 			inherit (texlive) scheme-medium standalone scontents;
 		})
