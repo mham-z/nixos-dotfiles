@@ -1,7 +1,7 @@
-{pkgs, lib, ...}: {
+{pkgs, lib, inputs, ...}: {
 	wayland.windowManager.sway = {
 		enable = true;
-		package = pkgs.sway;
+		package = inputs.swayfx.packages.${pkgs.system}.default;
 		config = null;
 	};
 
