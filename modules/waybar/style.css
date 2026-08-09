@@ -31,6 +31,7 @@ tooltip label {
 	margin: 0px 0px;
 	padding: 0px 10px;
 	min-width: 24px;
+	transition: all 0.1s;
 }
 #workspaces button.empty {
 	padding: 0px 2px;
