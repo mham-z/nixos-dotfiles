@@ -9,6 +9,9 @@
 		wl-clipboard
 		wayvnc
 
+		wineWow64Packages.stable
+		winetricks
+
 		thunderbird
 		nemo-with-extensions
 		bluetui
