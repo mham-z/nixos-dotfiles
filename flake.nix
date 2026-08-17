@@ -8,8 +8,6 @@
 
 		nixcord.url = "github:4evy/nixcord";
 
-		swayfx.url = "github:wlrfx/swayfx";
-
 		home-manager.url = "github:nix-community/home-manager/release-26.05";
 		home-manager.inputs.nixpkgs.follows = "nixpkgs";
 
