@@ -19,8 +19,10 @@
 		krita
 		inkscape
 		blender
+		vlc
 
 		prismlauncher
+		heroic
 
 		xournalpp
 		obsidian
