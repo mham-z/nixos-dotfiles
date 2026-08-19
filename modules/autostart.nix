@@ -15,6 +15,7 @@ let
 		Install.WantedBy = ["graphical-session.target"];
 	};
 in {
+	systemd.user.startServices = "suggest";
 	systemd.user.services = {
 		zen         = mkAutostart "Zen Browser" "flatpak run app.zen_browser.zen";
 		vesktop     = mkAutostart "Equibop"     "equibop";
