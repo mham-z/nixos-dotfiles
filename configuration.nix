@@ -258,6 +258,7 @@
 			root = "sudo -i";
 			rs = "sudo nixos-rebuild switch --flake ~/dotfiles/#nixos";
 			rb = "sudo nixos-rebuild boot --flake ~/dotfiles/#nixos";
+			hs = "home-manager switch --flake ~/dotfiles/#hamza";
 			code = "code-insiders";
 			dl = "aria2c -d ~/Downloads/aria2 --split=16";
 		};

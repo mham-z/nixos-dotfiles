@@ -2,6 +2,8 @@
 	home.stateVersion = "26.05";
 
 	home.packages = with pkgs; [
+		home-manager
+
 		cava
 		cmd-polkit
 		udiskie
