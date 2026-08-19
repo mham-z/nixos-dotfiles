@@ -34,7 +34,7 @@ config_file="/tmp/polybar_cava_${channel:-stereo}.conf"
 
 cat > "$config_file" <<EOF
 [general]
-bars = 20
+bars = 15
 framerate = 30
 autosens = 0
 sensitivity = 400
