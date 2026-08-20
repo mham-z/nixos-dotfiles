@@ -1,7 +1,7 @@
 {...}: {
 	programs.foot = {
 		enable = true;
-		
+
 		settings = {
 			main = {
 				font = "NotoSansM Nerd Font:size=12";
@@ -19,26 +19,29 @@
 			};
 
 			colors-dark = {
-				background = "191724";
-				foreground = "e0def4";
-				regular0 = "26233a";
-				regular1 = "eb6f92";
-				regular2 = "9ccfd8";
-				regular3 = "f6c177";
-				regular4 = "31748f";
-				regular5 = "c4a7e7";
-				regular6 = "ebbcba";
-				regular7 = "e0def4";
-				bright0  = "47435d";
-				bright1  = "ff98ba";
-				bright2  = "c5f9ff";
-				bright3  = "ffeb9e";
-				bright4  = "5b9ab7";
-				bright5  = "eed0ff";
-				bright6  = "ffe5e3";
-				bright7  = "fefcff";
-				flash    = "f6c177";
-				cursor   = "191724 e0def4";
+				background = "2E3440";
+				foreground = "D8DEE9";
+
+				regular0 = "3B4252";
+				regular1 = "BF616A";
+				regular2 = "A3BE8C";
+				regular3 = "EBCB8B";
+				regular4 = "81A1C1";
+				regular5 = "B48EAD";
+				regular6 = "88C0D0";
+				regular7 = "E5E9F0";
+
+				bright0 = "4C566A";
+				bright1 = "BF616A";
+				bright2 = "A3BE8C";
+				bright3 = "EBCB8B";
+				bright4 = "81A1C1";
+				bright5 = "B48EAD";
+				bright6 = "8FBCBB";
+				bright7 = "ECEFF4";
+
+				flash = "88C0D0";
+				cursor = "2E3440 D8DEE9";
 			};
 		};
 	};

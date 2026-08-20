@@ -7,12 +7,12 @@
 	  enable = true;
 
 		settings = {
-			background-color = "#26233a";
-			text-color = "#e0def4";
-			border-color = "#f6c177";
+			background-color = "#3b4252";
+			text-color = "#eceff4";
+			border-color = "#88c0d0";
 			border-size = 2;
 			border-radius = 0;
-			progress-color = "over #f6c17760";
+			progress-color = "over #00000060";
 
 			anchor = "top-right";
 			width = 700;
@@ -33,7 +33,7 @@
 			max-visible = 5;
 
 			"urgency=high" = {
-				border-color = "#c9456a";
+				border-color = "#d08770";
 				default-timeout = 0;
 			};
 

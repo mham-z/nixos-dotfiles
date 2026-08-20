@@ -1,6 +1,6 @@
 /*----------------MAIN----------------------*/
 
-@import "./rose-pine.css";
+@import "./nord.css";
 
 * {
 	all: unset;
@@ -9,7 +9,7 @@
 }
 
 #waybar {
-	background: alpha(@base, 1);
+	background: alpha(@nord0, 1);
 	color: white;
 }
 tooltip {
@@ -26,7 +26,8 @@ tooltip label {
 /*---------------TOPBAR---------------------*/
 
 #workspaces button {
-	background-color: @overlay;
+	background-color: @nord1;
+	color: @nord6;
 	border: 0px solid rgba(255,255,255,0.05);
 	margin: 0px 0px;
 	padding: 0px 10px;
@@ -34,49 +35,49 @@ tooltip label {
 }
 #workspaces button.empty {
 	padding: 0px 2px;
-	min-width: 21px;
+	min-width: 24px;
 }
 #workspaces button.focused {
-	background-color: @iris;
-	color: @base;
+	background-color: @nord10;
+	color: @nord6;
 }
 #workspaces button.urgent {
-	background-color: @love;
-	color: @base;
+	background-color: @nord12;
+	color: @nord6;
 }
 
 /* CAVA */
 #custom-cava-left, #custom-cava-right {
 	padding: 0px 4px;
-	color: @foam;
+	color: @nord9;
 }
 
 /*--------------BOTTOMBAR-------------------*/
 
 /* SEPARATORS */
 #custom-s-gray {
-	color: #718ba6;
+	color: @nord4;
 	margin: 0px 12px;
 }
-#custom-s-foam {
-	color: @foam;
-	margin: 0px 6px;
-	font-size: 8pt;
-}
 #custom-s-rose {
-	color: @rose;
+	color: @nord14;
 	margin: 0px 6px;
-	font-size: 8pt;
+	font-size: 7pt;
 }
 #custom-s-gold {
-	color: @gold;
+	color: @nord8;
 	margin: 0px 6px;
-	font-size: 8pt;
+	font-size: 7pt;
+}
+#custom-s-yellow {
+	color: @nord13;
+	margin: 0px 6px;
+	font-size: 7pt;
 }
 
 /* SENSORS */
 #cpu, #custom-cpu-temp, #custom-dgpu-load, #custom-dgpu-temp, #memory, #disk, #custom-fan1, #custom-fan2 {
-	color: @gold;
+	color: @nord7;
 }
 
 /* TRAY */
@@ -85,13 +86,13 @@ tooltip label {
 	margin-left: 4px;
 }
 #tray menu {
-	background: @base;
+	background: @nord0;
 	padding: 3px;
-	border: 1px solid @iris;
+	border: 2px solid @nord2;
 }
 #tray menuitem {
-	background: @highlightLow;
-	border: 1px solid alpha(@iris, 0.1);
+	background: @nord1;
+	border: 1px solid @nord2;
 	margin: 1px;
 	padding: 0px;
 }
@@ -100,61 +101,49 @@ tooltip label {
 	padding: 0px 3px 0px 3px;
 }
 #tray menuitem:hover {
-    background: @highlightMed;
-	transition: color 0.1s ease-in-out, background-color 0.1s ease-in-out;
-}
-
-/* PPD */
-#power-profiles-daemon {
-	color: @rose;
+    background: @nord2;
 }
 
 /* ICONS */
-#custom-notifs, #idle_inhibitor {
+#custom-notifs, #idle_inhibitor, #power-profiles-daemon {
 	font-size: 12pt;
-	color: @rose;
+	color: @nord15;
 	margin: 0px 10px 0px 0px;
-}
-
-/* UPDATES */
-#custom-updates {
-	color: @gold;
-	margin: 0px 0px 0px 6px;
 }
 
 /* WIREPLUMBER */
 #wireplumber {
-	color: @rose;
+	color: @nord14;
 }
 
 /* BACKLIGHT */
 #backlight {
-	color: @rose;
+	color: @nord14;
 }
 
 /* BLUETOOTH */
 #bluetooth {
-	color: @foam;
+	color: @nord13;
 }
 
 /* NETWORK */
 #network {
-	color: @foam;
+	color: @nord13;
 }
 
 /* BATTERY */
 #battery {
-	color: @foam;
+	color: @nord13;
 }
 #battery.warning {
-	color: @gold;
+	color: @nord12;
 }
 #battery.critical {
-	color: @love;
+	color: @nord11;
 }
 
 /* CLOCK */
 #clock {
-	color: @iris;
+	color: @nord15;
 	margin-right: 6px;
 }

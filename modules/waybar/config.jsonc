@@ -24,7 +24,7 @@
 		"height": 24,
 		"fixed-center": false,
 
-		"modules-left": ["tray", "custom/s-gray", "power-profiles-daemon", "custom/s-rose", "custom/notifs", "idle_inhibitor", "custom/updates"],
+		"modules-left": ["tray", "custom/s-gray", "power-profiles-daemon", "custom/notifs", "idle_inhibitor"],
 		"modules-center": [
 			"cpu",
 			"custom/cpu-temp",
@@ -47,11 +47,11 @@
 			"backlight",
 			"custom/s-gray",
 			"bluetooth",
-			"custom/s-foam",
+			"custom/s-yellow",
 			"network#wlan",
-			"custom/s-foam",
+			"custom/s-yellow",
 			"network#ethernet",
-			"custom/s-foam",
+			"custom/s-yellow",
 			"battery",
 			"custom/s-gray",
 			"clock"
@@ -78,22 +78,16 @@
 			"interval": "once",
 			"tooltip": false
 		},
+		"custom/s-yellow": {
+			"format": "│",
+			"interval": "once",
+			"tooltip": false
+		},
 
 		// Center
 		"cpu": {
 			"interval": 2,
-			"format": "CPU: {usage}% "
-		},
-
-		"memory": {
-			"interval": 2,
-			"format": "RAM: {used:0.1f}GiB / {total:0.1f}GiB"
-		},
-
-		"disk": {
-			"interval": 10,
-			"path": "/",
-			"format": "SSD: {used} / {total}"
+			"format": " {usage}% "
 		},
 
 		"custom/cpu-temp": {
@@ -102,22 +96,10 @@
 			"format": "{}°"
 		},
 
-		"custom/fan1": {
-			"interval": 2,
-			"exec": "bash -c 'v=\"$(cat /sys/devices/platform/thinkpad_hwmon/hwmon/hwmon*/fan1_input 2>/dev/null) RPM\"; [ \"$v\" = \"65535 RPM\" ] && v=DEAD; echo ${v:-N/A}'",
-			"format": "FAN1: {} ⁃ "
-		},
-
-		"custom/fan2": {
-			"interval": 2,
-			"exec": "bash -c 'v=\"$(cat /sys/devices/platform/thinkpad_hwmon/hwmon/hwmon*/fan2_input 2>/dev/null) RPM\"; [ \"$v\" = \"65535 RPM\" ] && v=DEAD; echo ${v:-N/A}'",
-			"format": "FAN2: {}"
-		},
-
 		"custom/dgpu-load": {
 			"interval": 2,
 			"exec": "bash -c 'GPU=0000:01:00.0; [ \"$(< /sys/bus/pci/devices/$GPU/power/runtime_status)\" != active ] && { echo N/A; exit; }; nvidia-smi --query-gpu=utilization.gpu --format=csv,noheader,nounits 2>/dev/null || echo N/A'",
-			"format": "GPU: {}% "
+			"format": "󰆦 {}% "
 		},
 
 		"custom/dgpu-temp": {
@@ -126,15 +108,44 @@
 			"format": "{}°"
 		},
 
+		"memory": {
+			"interval": 2,
+			"format": " {used:0.1f}G/{total:0.1f}G"
+		},
+
+		"disk": {
+			"interval": 10,
+			"path": "/",
+			"format": "󱛟 {percentage_used}%"
+		},
+
+		"custom/fan1": {
+			"interval": 2,
+			"exec": "bash -c 'v=\"$(cat /sys/devices/platform/thinkpad_hwmon/hwmon/hwmon*/fan1_input 2>/dev/null)\"; [ \"$v\" = \"65535\" ] && v=DEAD; echo ${v:-N/A}'",
+			"format": "󱑲 {} ⁃ "
+		},
+
+		"custom/fan2": {
+			"interval": 2,
+			"exec": "bash -c 'v=\"$(cat /sys/devices/platform/thinkpad_hwmon/hwmon/hwmon*/fan2_input 2>/dev/null)\"; [ \"$v\" = \"65535\" ] && v=DEAD; echo ${v:-N/A}'",
+			"format": "󱑳 {}"
+		},
+
+
 		// Left
 		"tray": {
-			"icon-size": 20,
-			"spacing": 0,
+			"icon-size": 16,
+			"spacing": 2,
 			"show-passive-items": true
 		},
 		"power-profiles-daemon": {
-			"format": "PWR: {profile}",
-			"tooltip": true
+			"format": "{icon}",
+			"format-icons": {
+				"default": "󱐋",
+				"performance": "󱐋",
+				"balanced": "󰗑",
+				"power-saver": "󰌪"
+			}
 		},
 		"custom/notifs": {
 			"exec": "makoctl mode | grep -qi dnd && echo 󰂛 || echo 󰂚",
@@ -152,36 +163,29 @@
 			},
 			"tooltip": false
 		},
-		"custom/updates": {
-			"format": "{}",
-			"interval": 3600,
-			"exec": "count=$(pkcon get-updates | grep -E '\\.(x86_64|noarch|i686)' | wc -l); [ \"$count\" -gt 0 ] && echo \"UPDATES: $count\"",
-			//"exec": "echo UPDATES: 9999",
-			"tooltip": false
-		},
 
 		// Right
 		"wireplumber#sink": {
-			"format": "SINK: {volume}%",
-			"format-muted": "SINK: MUTE",
+			"format": "  {volume}%",
+			"format-muted": " ",
 			"on-click": "wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle",
 			"scroll-step": 5
 		},
 		"wireplumber#source": {
 			"node-type": "Audio/Source",
-			"format": "SOURCE: {volume}%",
-			"format-muted": "SOURCE: MUTE",
+			"format": " {volume}%",
+			"format-muted": " MUTE",
 			"on-click": "wpctl set-mute @DEFAULT_AUDIO_SOURCE@ toggle",
 			"scroll-step": 5
 		},
 		"backlight": {
-			"format": "BKL: {percent}%",
+			"format": "󰃞 {percent}%",
 			"min-brightness": 1
 		},
 		"bluetooth": {
-			"format": "BT: {status}",
-			"format-connected": "BT: Connected",
-			"format-connected-battery": "BT: Connected {device_battery_percentage}%",
+			"format": "󰂯 {status}",
+			"format-connected": "󰂱",
+			"format-connected-battery": "󰂱 {device_battery_percentage}%",
 			"tooltip-format": "{controller_alias}\t{controller_address}\n\n{num_connections} connected",
 			"tooltip-format-connected": "{controller_alias}\t{controller_address}\n\n{num_connections} connected\n\n{device_enumerate}",
 			"tooltip-format-enumerate-connected": "{device_alias}\t{device_address}",
@@ -190,18 +194,18 @@
 		"network#ethernet": {
 			"interval": 10,
 			"interface": "e*",
-			"format-ethernet": "ETH: {ipaddr}",
-			"format-disconnected": "ETH: N/A" 
+			"format-ethernet": "󰈁 {ipaddr}",
+			"format-disconnected": "󰈂" 
 		},
 		"network#wlan": {
 			"interval": 10,
 			"interface": "wl*",
-			"format-wifi": "WLAN: {ipaddr} {signalStrength}% {essid}",
-			"format-disconnected": "WLAN: N/A",
+			"format-wifi": "󰤨  {ipaddr} {signalStrength}% {essid}",
+			"format-disconnected": "󰤭 ",
 			"max-length": 30
 		},
 		"battery": {
-			"format": "BAT0: {capacity}%{time}",
+			"format": "󰁹 {capacity}%{time}",
 			"format-time": " {H}:{m} left",
 			"format-icons": {
 				"default": [""],
