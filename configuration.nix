@@ -51,8 +51,8 @@
 	};
 
 	environment.sessionVariables = {
-		EDITOR = "vim";
-		VISUAL = "vim";
+		EDITOR = "nvim";
+		VISUAL = "nvim";
 		PAGER = "less";
 		
 		XDG_SESSION_DESKTOP = "sway";
@@ -173,11 +173,6 @@
   hardware.opentabletdriver.daemon.enable = true;
 
 	environment.systemPackages = with pkgs; [
-		(vim.overrideAttrs (oldAttrs: {
-			postInstall = (oldAttrs.postInstall or "") + ''
-				rm $out/share/applications/gvim.desktop
-			'';
-		}))
 		wget
 		lm_sensors
 		pciutils

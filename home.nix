@@ -43,6 +43,7 @@
 		./modules/fastfetch/fastfetch.nix
 		./modules/foot/foot.nix
 		./modules/nixcord/nixcord.nix
+		./modules/neovim/neovim.nix
 		./modules/autostart.nix
 	];
 
