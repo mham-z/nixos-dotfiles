@@ -1,0 +1,21 @@
+text-color = #eceff4
+background-color = #3b4252
+
+default-result-color = #eceff4
+default-result-background = #26233a00
+
+selection-color = #3b4252
+selection-background = #b48ead
+
+input-color = #b48ead
+input-background = #00000000
+
+placeholder-color = #eceff488
+placeholder-background = #00000000
+
+prompt-color = #eceff4
+prompt-background = #00000000
+
+selection-match-color = #00000000
+
+border-color = #b48ead

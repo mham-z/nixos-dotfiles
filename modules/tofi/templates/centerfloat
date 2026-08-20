@@ -1,0 +1,46 @@
+width = 1050
+height = 504
+
+padding-top = 3
+padding-bottom = 0
+padding-left = 6
+padding-right = 6
+
+margin-top = 0
+margin-bottom = 0
+margin-left = 10
+margin-right = 10
+
+font-size = 10
+
+clip-to-padding = false
+scale = true
+
+output = ""
+anchor = center
+exclusive-zone = -1
+
+prompt-text = "Choose: "
+prompt-padding = 0
+
+num-results = 0
+result-spacing = 12
+min-input-width = 20
+horizontal = false
+
+prompt-background-padding = 0
+prompt-background-corner-radius = 0
+
+placeholder-background-padding = 0
+placeholder-background-corner-radius = 0
+
+input-background-padding = 0
+input-background-corner-radius = 0
+
+default-result-background-corner-radius = 0
+
+selection-background-padding = 3,6,3,6
+selection-background-corner-radius = 0
+
+outline-width = 0
+border-width = 2

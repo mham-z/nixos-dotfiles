@@ -5,7 +5,7 @@ mkdir -p "$LOG_DIR"
 
 LOG_FILE="$LOG_DIR/tofi-runlog-$(date +%Y-%m-%d-at-%H-%M-%S).log"
 
-CHOICE=$(tofi-run -c ~/.config/tofi/run) 
+CHOICE=$(tofi-run -c ~/dotfiles/modules/tofi/configs/run) 
 
 if [ -n "$CHOICE" ]; then
 	uwsm app -- bash -c '

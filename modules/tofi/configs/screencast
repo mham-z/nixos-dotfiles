@@ -1,0 +1,10 @@
+include = ../colors/nord-purple
+include = ../font
+include = ../templates/centerfloat
+
+width = 700
+
+prompt-text = "Choose what to screencast: "
+
+matching-algorithm = fuzzy
+require-match = true

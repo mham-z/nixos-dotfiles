@@ -1,0 +1,13 @@
+include = ../colors/nord
+include = /home/hamza/.config/tofi/direct-font
+include = ../templates/middlebar
+
+prompt-text = "Applications: "
+
+history = true
+matching-algorithm = fuzzy
+require-match = true
+
+# uwsm handles this
+drun-launch = false
+terminal = "foot"

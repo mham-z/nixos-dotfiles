@@ -1,0 +1,8 @@
+include = ../colors/nord-green
+include = ../font
+include = ../templates/centerfloat
+
+prompt-text = "Clipboard history: "
+
+matching-algorithm = fuzzy
+require-match = true

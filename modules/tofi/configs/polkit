@@ -1,0 +1,11 @@
+include = ../colors/nord-polkit
+include = ../font
+include = ../templates/middlebar
+
+prompt-text = "Password: "
+
+require-match = false
+hide-input = true
+hidden-character = "•"
+
+multi-instance = true

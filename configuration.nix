@@ -134,7 +134,7 @@
 				exec_before = "notify-send -h string:x-canonical-private-synchronous:screencast-alert \"Screencast\" \"Screencast started\"";
 				exec_after = "notify-send -h string:x-canonical-private-synchronous:screencast-alert \"Screencast\" \"Screencast ended\"";
 				chooser_type = "dmenu";
-				chooser_cmd = "${pkgs.tofi}/bin/tofi -c ~/.config/tofi/xdp-wlr";
+				chooser_cmd = "${pkgs.tofi}/bin/tofi -c ~/dotfiles/modules/tofi/configs/screencast";
 			};
 		};
 

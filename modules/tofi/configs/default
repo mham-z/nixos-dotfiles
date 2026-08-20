@@ -1,0 +1,3 @@
+include = /home/hamza/.config/tofi/colors/nord-alt
+include = /home/hamza/.config/tofi/font
+include = /home/hamza/.config/tofi/templates/centerfloat

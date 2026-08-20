@@ -4,8 +4,7 @@ let
 	allFiles = builtins.attrNames (builtins.readDir ./.);
 
 	stowFiles = builtins.filter (name: 
-		name != "tofi.nix" && 
-		name != "font" &&
+		name != "tofi.nix" &&
 		!lib.hasSuffix ".nix" name
 	) allFiles;
 
@@ -15,10 +14,9 @@ let
 	}) stowFiles);
 
 	fontEntry = {
-		"tofi/font" = {
+		"tofi/direct-font" = {
 			text = ''
 				font = "${pkgs.noto-fonts}/share/fonts//noto/NotoSansMono.ttf"
-				${builtins.readFile ./font}
 			'';
 		};
 	};

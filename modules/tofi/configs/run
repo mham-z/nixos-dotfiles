@@ -1,0 +1,8 @@
+include = ../colors/nord-run
+include = /home/hamza/.config/tofi/direct-font
+include = ../templates/middlebar
+
+prompt-text = "$ "
+
+matching-algorithm = prefix
+require-match = false
