@@ -6,8 +6,9 @@
 		discord.enable = false;
 		equibop.enable = true;
 
-		config = {};
-		
+		config.useQuickCss = true;
+		quickCss = builtins.readFile ./nordic.theme.css;
+
 		config.plugins = {
 			alwaysExpandRoles.enable = true;
 			anonymiseFileNames = {
