@@ -14,6 +14,7 @@
 		wineWow64Packages.stable
 		winetricks
 
+		gh
 		thunderbird
 		nemo-with-extensions
 		bluetui
@@ -76,6 +77,7 @@
 			name = "Hamza";
 			email = "82454201+mham-z@users.noreply.github.com";
 		};
+		settings.credential.helper = "${pkgs.gh}/bin/gh auth git-credential";
 	};
 
 	programs.nix-your-shell = {
