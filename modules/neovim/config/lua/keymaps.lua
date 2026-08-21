@@ -10,3 +10,6 @@ map("n", "<Right>", "l")
 
 map("n", "<leader>e", "<cmd>Neotree toggle<CR>")
 map("n", "<leader>g", "<cmd>Neogit<CR>")
+map("n", "<leader>f", "<cmd>Telescope find_files<CR>")
+map("n", "<leader>s", "<cmd>Telescope live_grep<CR>")
+map("n", "<leader>r", "<cmd>Spectre<CR>")

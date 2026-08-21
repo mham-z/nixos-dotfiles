@@ -13,11 +13,8 @@
 			lualine-nvim
 			gitsigns-nvim
 			neogit
-		];
-
-		extraPackages = with pkgs; [
-			ripgrep
-			fd
+			telescope-nvim
+			nvim-spectre
 		];
 	};
 

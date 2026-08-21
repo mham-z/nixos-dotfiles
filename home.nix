@@ -5,16 +5,18 @@
 		home-manager
 
 		cava
+		gh
 		cmd-polkit
 		udiskie
 		wlsunset
 		wl-clipboard
 		wayvnc
+		ripgrep
+		fd
 
 		wineWow64Packages.stable
 		winetricks
 
-		gh
 		thunderbird
 		nemo-with-extensions
 		bluetui
