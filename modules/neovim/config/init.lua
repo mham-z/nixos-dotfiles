@@ -1,10 +1,16 @@
+local PLUGINS = {	
+	"nord";
+	"neo-tree";
+	"lualine";
+	"gitsigns";
+	"neogit";
+	"telescope";
+	"spectre";
+}
+
 require("options")
 require("keymaps")
 
-require("plugins.nord")
-require("plugins.neo-tree")
-require("plugins.lualine")
-require("plugins.gitsigns")
-require("plugins.neogit")
-require("plugins.telescope")
-require("plugins.spectre")
+for _, name in ipairs(PLUGINS) do
+	require("plugins."..name)
+end
