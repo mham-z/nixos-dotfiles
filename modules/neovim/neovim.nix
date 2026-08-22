@@ -18,6 +18,7 @@
 			cord-nvim
 			blink-cmp
 			ccc-nvim
+			nvim-treesitter.withAllGrammars
 		];
 
 		extraPackages = with pkgs; [

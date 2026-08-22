@@ -8,7 +8,8 @@ local PLUGINS = {
 	"spectre";
 	"cord";
 	"blink";
-	"ccc"
+	"ccc";
+	"treesitter";
 }
 
 require("options")
