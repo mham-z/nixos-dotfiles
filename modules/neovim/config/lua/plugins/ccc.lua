@@ -4,3 +4,5 @@ require("ccc").setup {
 		lsp = true;
 	};
 }
+
+vim.keymap.set("n", "<leader>cp", "<cmd>CccPick<CR>")
