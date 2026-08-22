@@ -16,6 +16,18 @@
 			telescope-nvim
 			nvim-spectre
 			cord-nvim
+			blink-cmp
+		];
+
+		extraPackages = with pkgs; [
+			lua-language-server
+			luau-lsp
+			nil
+			clang-tools
+			basedpyright
+			vscode-langservers-extracted
+			texlab
+			marksman
 		];
 	};
 

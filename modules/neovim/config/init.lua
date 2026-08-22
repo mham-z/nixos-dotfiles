@@ -7,6 +7,7 @@ local PLUGINS = {
 	"telescope";
 	"spectre";
 	"cord";
+	"blink";
 }
 
 require("options")
@@ -15,3 +16,5 @@ require("keymaps")
 for _, name in ipairs(PLUGINS) do
 	require("plugins."..name)
 end
+
+require("lsp")
