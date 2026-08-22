@@ -6,6 +6,7 @@ local PLUGINS = {
 	"neogit";
 	"telescope";
 	"spectre";
+	"cord";
 }
 
 require("options")

@@ -15,6 +15,7 @@
 			neogit
 			telescope-nvim
 			nvim-spectre
+			cord-nvim
 		];
 	};
 
