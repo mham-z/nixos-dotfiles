@@ -1,4 +1,4 @@
-local PLUGINS = {	
+local PLUGINS = {
 	"nord";
 	"neo-tree";
 	"lualine";
@@ -8,6 +8,7 @@ local PLUGINS = {
 	"spectre";
 	"cord";
 	"blink";
+	"ccc"
 }
 
 require("options")

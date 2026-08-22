@@ -17,6 +17,7 @@
 			nvim-spectre
 			cord-nvim
 			blink-cmp
+			ccc-nvim
 		];
 
 		extraPackages = with pkgs; [

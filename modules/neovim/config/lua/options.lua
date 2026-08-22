@@ -11,6 +11,7 @@ opt.list = true
 opt.confirm = true
 opt.ignorecase = true
 opt.smartcase = true
+opt.termguicolors = true
 
 vim.api.nvim_create_autocmd('UIEnter', {
 	callback = function()
