@@ -16,6 +16,7 @@ local PLUGINS = {
 
 require("options")
 require("keymaps")
+require("mode-cursorline")
 
 for _, name in ipairs(PLUGINS) do
 	require("plugins."..name)
