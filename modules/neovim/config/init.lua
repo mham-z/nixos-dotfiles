@@ -10,6 +10,7 @@ local PLUGINS = {
 	"blink";
 	"ccc";
 	"treesitter";
+	"textobjects";
 }
 
 require("options")
