@@ -20,6 +20,7 @@
 			ccc-nvim
 			nvim-treesitter.withAllGrammars
 			nvim-treesitter-textobjects
+			auto-session
 		];
 
 		extraPackages = with pkgs; [

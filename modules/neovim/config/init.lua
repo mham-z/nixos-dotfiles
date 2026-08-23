@@ -11,6 +11,7 @@ local PLUGINS = {
 	"ccc";
 	"treesitter";
 	"textobjects";
+	"auto-session";
 }
 
 require("options")
