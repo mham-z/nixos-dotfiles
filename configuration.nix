@@ -245,6 +245,9 @@
 			bindkey -e
 			bindkey "\e[1;5D" backward-word
 			bindkey "\e[1;5C" forward-word
+			
+			zstyle ':completion:*' matcher-list 'm:{a-z}={A-Z}'
+			autoload -Uz compinit && compinit
 		'';
 
 		shellAliases = {
