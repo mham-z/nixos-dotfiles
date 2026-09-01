@@ -170,7 +170,7 @@
 	systemd.services.keyd.serviceConfig.CapabilityBoundingSet = ["CAP_SETGID"];
 
 	hardware.opentabletdriver.enable = true;
-  hardware.opentabletdriver.daemon.enable = true;
+	hardware.opentabletdriver.daemon.enable = true;
 
 	environment.systemPackages = with pkgs; [
 		wget
