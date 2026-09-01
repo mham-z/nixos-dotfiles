@@ -11,6 +11,7 @@
 		wlsunset
 		wl-clipboard
 		wayvnc
+		scrcpy
 		ripgrep
 		fd
 
