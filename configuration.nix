@@ -186,6 +186,7 @@
 		lsof
 		aria2
 		python3
+		lmstudio
 
 		dnsmasq
 
