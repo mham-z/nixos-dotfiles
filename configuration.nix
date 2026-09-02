@@ -187,6 +187,7 @@
 		aria2
 		python3
 		lmstudio
+		uv
 
 		dnsmasq
 
