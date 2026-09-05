@@ -21,6 +21,7 @@
 			nvim-treesitter.withAllGrammars
 			nvim-treesitter-textobjects
 			auto-session
+			render-markdown-nvim
 		];
 
 		extraPackages = with pkgs; [
