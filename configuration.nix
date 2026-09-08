@@ -188,6 +188,7 @@
 		python3
 		lmstudio
 		uv
+		psmisc
 
 		dnsmasq
 
