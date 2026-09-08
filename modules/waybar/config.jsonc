@@ -222,7 +222,7 @@
 		},
 		"clock": {
 			"interval": 1,
-			"format": "{:%w-%Y-%m-%d %I:%M:%S %p}"
+			"format": "<span text_transform='uppercase'>{:%a, %Y %b %d ⁃ %I:%M:%S %p}</span>"
 		}
 	}
 ]
