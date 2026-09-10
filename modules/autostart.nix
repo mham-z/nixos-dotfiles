@@ -23,5 +23,6 @@ in {
 		thunderbird = mkAutostart "Thunderbird" "thunderbird";
 		wlsunset    = mkAutostart "wlsunset"    "wlsunset -l 25 -L 67";
 		footserver  = mkAutostart "Foot Server" "foot --server";
+		alarm-clock = mkAutostart "alarm-clock" "alarm-clock-applet --hidden";
 	};
 }

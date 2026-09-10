@@ -14,6 +14,7 @@
 		scrcpy
 		ripgrep
 		fd
+		alarm-clock-applet
 
 		wineWow64Packages.stable
 		winetricks
