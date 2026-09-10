@@ -34,6 +34,7 @@
 		xournalpp
 		obsidian
 		texstudio
+		libreoffice-still
 		(texlive.combine {
 			inherit (texlive) scheme-medium standalone scontents;
 		})
