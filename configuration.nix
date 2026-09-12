@@ -215,6 +215,7 @@
 		nerd-fonts.adwaita-mono
 		nerd-fonts.symbols-only
 		nerd-fonts.noto
+		corefonts
 	];
 	fonts.fontconfig.enable = true;
 
