@@ -299,6 +299,8 @@
 		qemu.vhostUserPackages = with pkgs; [virtiofsd];
 	};
 	programs.virt-manager.enable = true;
+	
+	programs.kdeconnect.enable = true;
 
 	services.openssh.enable = true;
 	services.openssh.openFirewall = true; 

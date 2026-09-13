@@ -17,12 +17,14 @@ let
 in {
 	systemd.user.startServices = "suggest";
 	systemd.user.services = {
-		zen         = mkAutostart "Zen Browser" "flatpak run app.zen_browser.zen";
-		vesktop     = mkAutostart "Equibop"     "equibop";
-		zapzap      = mkAutostart "ZapZap"      "flatpak run com.rtosta.zapzap";
-		thunderbird = mkAutostart "Thunderbird" "thunderbird";
-		wlsunset    = mkAutostart "wlsunset"    "wlsunset -l 25 -L 67";
-		footserver  = mkAutostart "Foot Server" "foot --server";
-		alarm-clock = mkAutostart "alarm-clock" "alarm-clock-applet --hidden";
+		zen         = mkAutostart "Zen Browser"           "flatpak run app.zen_browser.zen";
+		vesktop     = mkAutostart "Equibop"               "equibop";
+		zapzap      = mkAutostart "ZapZap"                "flatpak run com.rtosta.zapzap";
+		thunderbird = mkAutostart "Thunderbird"           "thunderbird";
+		wlsunset    = mkAutostart "wlsunset"              "wlsunset -l 25 -L 67";
+		footserver  = mkAutostart "Foot Server"           "foot --server";
+		alarm-clock = mkAutostart "alarm-clock"           "alarm-clock-applet --hidden";
+		kdeconnectd = mkAutostart "KDE Connect Daemon"    "kdeconnectd";
+		kdeconnecti = mkAutostart "KDE Connect Indicator" "kdeconnect-indicator";
 	};
 }
