@@ -76,7 +76,7 @@ tooltip label {
 }
 
 /* SENSORS */
-#cpu, #custom-cpu-temp, #custom-dgpu-load, #custom-dgpu-temp, #memory, #disk, #custom-fan1, #custom-fan2 {
+#cpu, #custom-cpu-temp, #custom-dgpu-load, #custom-dgpu-temp, #custom-dgpu-vram, #memory, #disk, #custom-fan1, #custom-fan2 {
 	color: @nord7;
 }
 

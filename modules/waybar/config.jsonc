@@ -31,6 +31,7 @@
 			"custom/s-gold",
 			"custom/dgpu-load",
 			"custom/dgpu-temp",
+			"custom/dgpu-vram",
 			"custom/s-gold",
 			"memory",
 			"custom/s-gold",
@@ -106,6 +107,12 @@
 			"interval": 5,
 			"exec": "bash -c 'GPU=0000:01:00.0; [ \"$(< /sys/bus/pci/devices/$GPU/power/runtime_status)\" != active ] && { echo N/A; exit; }; nvidia-smi --query-gpu=temperature.gpu --format=csv,noheader,nounits 2>/dev/null || echo N/A'",
 			"format": "{}°"
+		},
+
+		"custom/dgpu-vram": {
+			"interval": 2,
+			"exec": "bash -c 'GPU=0000:01:00.0; [ \"$(< /sys/bus/pci/devices/$GPU/power/runtime_status)\" != active ] && { echo N/A; exit; }; nvidia-smi --query-gpu=memory.used,memory.total --format=csv,noheader,nounits 2>/dev/null | awk -F\", \" \"{printf \\\"%.1fG/%.0fG\\\\n\\\", \\$1/1024, \\$2/1024}\" || echo N/A'",
+			"format": " {}"
 		},
 
 		"memory": {
