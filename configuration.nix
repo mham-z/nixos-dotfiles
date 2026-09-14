@@ -246,9 +246,14 @@
 		'';
 
 		interactiveShellInit = ''
-			bindkey -e
+			source ${pkgs.zsh-vi-mode}/share/zsh-vi-mode/zsh-vi-mode.plugin.zsh
 			bindkey "\e[1;5D" backward-word
 			bindkey "\e[1;5C" forward-word
+
+			bindkey -M visual "h" visual-backward-char
+			bindkey -M visual "j" up-line-or-history
+			bindkey -M visual "k" down-line-or-history
+			bindkey -M visual "l" visual-forward-char
 			
 			zstyle ':completion:*' matcher-list 'm:{a-z}={A-Z}'
 			autoload -Uz compinit && compinit
@@ -269,10 +274,15 @@
 	};
 
 	programs.starship = {
-			enable = true;
-			settings = {
-				add_newline = false;
+		enable = true;
+		settings = {
+			add_newline = false;
+			character = {
+				success_symbol = "[❯](bold green)";
+				error_symbol = "[❯](bold red)";
+				vimcmd_symbol = "[❮](bold blue)";
 			};
+		};
 	};
 
 	security.wrappers.wlock = {
