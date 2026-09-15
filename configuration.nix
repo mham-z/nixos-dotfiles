@@ -309,6 +309,9 @@
 		qemu.vhostUserPackages = with pkgs; [virtiofsd];
 	};
 	programs.virt-manager.enable = true;
+
+	programs.tmux.enable = true;
+	programs.screen.enable = true;
 	
 	programs.kdeconnect.enable = true;
 
