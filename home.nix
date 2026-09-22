@@ -50,6 +50,7 @@
 		./modules/foot/foot.nix
 		./modules/nixcord/nixcord.nix
 		./modules/neovim/neovim.nix
+		./modules/vifm/vifm.nix
 		./modules/autostart.nix
 	];
 
