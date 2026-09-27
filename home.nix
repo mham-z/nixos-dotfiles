@@ -27,6 +27,7 @@
 		inkscape
 		blender
 		vlc
+		peazip
 
 		prismlauncher
 		heroic
