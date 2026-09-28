@@ -1,4 +1,4 @@
-{pkgs, ...}: {
+{pkgs, lib, ...}: {
 	home.stateVersion = "26.05";
 
 	home.packages = with pkgs; [
@@ -18,11 +18,22 @@
 		pastel
 		nomacs
 
+		kdePackages.dolphin
+		kdePackages.dolphin-plugins
+		kdePackages.baloo
+		kdePackages.kservice
+		kdePackages.breeze
+		kdePackages.breeze-icons
+		kdePackages.qqc2-desktop-style
+		kdePackages.qtstyleplugin-kvantum
+		libsForQt5.qtstyleplugin-kvantum
+		kdePackages.kde-cli-tools
+		kdePackages.kio-extras
+
 		wineWow64Packages.stable
 		winetricks
 
 		thunderbird
-		nemo-with-extensions
 		bluetui
 		aseprite
 		krita
@@ -53,9 +64,12 @@
 		./modules/foot/foot.nix
 		./modules/nixcord/nixcord.nix
 		./modules/neovim/neovim.nix
-		./modules/vifm/vifm.nix
 		./modules/autostart.nix
 	];
+	
+	home.activation.regenerateSycoca = lib.hm.dag.entryAfter [ "writeBoundary" ] ''
+		run ${pkgs.kdePackages.kservice}/bin/kbuildsycoca6 --noincremental
+	'';
 
 	services.flameshot = {
 		enable = true;
@@ -129,8 +143,24 @@
 		};
 	};
 
+	 xdg.userDirs = {
+		enable = true;
+		createDirectories = true;
+	};
+
 	home.sessionVariables = {
 		TERMINAL = "foot";
 		GDK_CORE_DEVICE_EVENTS = "1";
+		GTK_USE_PORTAL = "1";
+		QT_QPA_PLATFORMTHEME = "kvantum";
+		QT_STYLE_OVERRIDE = "kvantum";
+		QT_QPA_PLATFORM = "wayland;xcb";
+		XDG_MENU_PREFIX = "plasma-"; 
+	};
+
+	qt = {
+		enable = true;
+		platformTheme.name = "kvantum";
+		style.name = "kvantum";
 	};
 }

@@ -122,11 +122,14 @@
 			binPath = "${pkgs.sway}/bin/sway";
 		};
 	};
-
+	
 	xdg.portal = {
 		enable = true;
 		wlr.enable = true;
-		extraPortals = [pkgs.xdg-desktop-portal-gtk];
+		extraPortals = with pkgs; [
+			xdg-desktop-portal-gtk
+			kdePackages.xdg-desktop-portal-kde
+		];
 		
 		wlr.settings = {
 			screencast = {
@@ -138,8 +141,21 @@
 			};
 		};
 
-		config.common.default = "gtk";
+		config = {
+			common = {
+				"org.freedesktop.impl.portal.FileChooser" = ["kde"];
+				"default" = ["gtk"];
+			};
+			
+			sway = {
+				"org.freedesktop.impl.portal.FileChooser" = ["kde"];
+				"default" = ["gtk"];
+			};
+		};
 	};
+
+	environment.etc."xdg/menus/applications.menu".source = 
+		"${pkgs.kdePackages.plasma-workspace}/etc/xdg/menus/plasma-applications.menu";
 
 	services.dbus.enable = true;
 	services.seatd.enable = true;
@@ -191,6 +207,7 @@
 		psmisc
 
 		dnsmasq
+		desktop-file-utils
 
 		(pkgs.writeScriptBin "dgpu-mode" ''
 		#!/bin/sh
