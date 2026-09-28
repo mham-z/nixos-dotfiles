@@ -15,6 +15,8 @@
 		ripgrep
 		fd
 		alarm-clock-applet
+		pastel
+		nomacs
 
 		wineWow64Packages.stable
 		winetricks
