@@ -1,24 +1,21 @@
 require("neo-tree").setup {
+	hijack_netrw_behavior = "disabled";
+
 	filesystem = {
 		filtered_items = {
 			visible = true;
 		};
 		window = {
-			position = "left";
-			width = 40;
+			position = "float";
+			popup = {
+				size = {
+					height = "80%";
+					width = "75%";
+				};
+				position = "50%";
+			};
 		};
 	};
 }
 
-vim.api.nvim_create_autocmd("TabNew", {
-	callback = function()
-		vim.schedule(function()
-			require("neo-tree.command").execute {
-				action = "show";
-				source = "filesystem";
-			}
-		end)
-	end;
-})
-
-vim.keymap.set("n", "<leader>e",  "<cmd>Neotree toggle<CR>")
+vim.keymap.set("n", "<leader>e",  "<cmd>Neotree float toggle<CR>")
