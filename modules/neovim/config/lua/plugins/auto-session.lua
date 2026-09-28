@@ -7,22 +7,14 @@ require("auto-session").setup {
 		vim.fn.expand("~");
 	};
 
-	post_restore_cmds = {
+	bypass_save_filetypes = {"neo-tree"};
+
+	pre_save_cmds = {
 		function()
-			require("neo-tree.command").execute {
-				action = "focus";
-				source = "filesystem";
-				reveal = true;
-			}
+			vim.cmd("Neotree close")
 		end;
 	};
 
-	no_restore_cmds = {
-		function()
-			require("neo-tree.command").execute {
-				action = "focus";
-				source = "filesystem";
-			}
-		end;
-	};
+	post_restore_cmds = {};
+	no_restore_cmds = {};
 }
