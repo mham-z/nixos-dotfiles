@@ -13,15 +13,18 @@ opt.ignorecase = true
 opt.smartcase = true
 opt.termguicolors = true
 
+opt.tabstop = 4
+opt.shiftwidth = 4
+opt.expandtab = false
+
 vim.api.nvim_create_autocmd('UIEnter', {
 	callback = function()
 		vim.o.clipboard = 'unnamedplus'
-	end,
+	end;
 })
 
 vim.api.nvim_create_autocmd('TextYankPost', {
-	desc = 'Highlight when yanking (copying) text',
 	callback = function()
 		vim.hl.on_yank()
-	end,
+	end;
 })
