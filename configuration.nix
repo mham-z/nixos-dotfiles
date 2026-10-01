@@ -71,15 +71,16 @@
 		"Default specialization" "" ""
 	];
 
-	specialisation."iGPU-Only".configuration = {
+	specialisation."mobile-mode".configuration = {
 		environment.etc."issue".text = lib.mkForce (builtins.concatStringsSep "\n" [
 			"Welcome to NixOS ${config.system.nixos.version} (\\m) - \\l"
 			"Kernel version \\r"
-			"iGPU-only specialization" "" ""
+			"Mobile-mode specialization" "" ""
 		]);
 
-
-		system.nixos.tags = ["igpu-only"];
+		environment.sessionVariables.NIXOS_MOBILE_MODE = "1";
+		
+		system.nixos.tags = ["mobile-mode"];
 		services.xserver.videoDrivers = ["modesetting"];
 		hardware.nvidia.nvidiaSettings = lib.mkForce false;
 		boot.blacklistedKernelModules = ["nvidia" "nvidia_modeset" "nvidia_uvm" "nvidia_drm" "nouveau"];
