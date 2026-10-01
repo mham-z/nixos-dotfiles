@@ -6,7 +6,7 @@
 			main = {
 				font = "NotoSansM Nerd Font:size=12";
 				font-size-adjustment = 1;
-				pad = "4x4 center-when-maximized-and-fullscreen";
+				pad = "0x0 center-when-maximized-and-fullscreen";
 				resize-by-cells = false;
 				resize-keep-grid = false;
 			};
