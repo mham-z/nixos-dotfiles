@@ -10,19 +10,16 @@
 
 		home-manager.url = "github:nix-community/home-manager/release-26.05";
 		home-manager.inputs.nixpkgs.follows = "nixpkgs";
-
-		vscode-insiders.url = "github:auguwu/vscode-insiders-nix";
-		vscode-insiders.inputs.nixpkgs.follows = "nixpkgs";
 	};
 
-	outputs = {self, nixpkgs, home-manager, vscode-insiders, ...}@inputs: {
+	outputs = {self, nixpkgs, home-manager, ...}@inputs: {
 		nixosConfigurations.nixos = nixpkgs.lib.nixosSystem {
 			system = "x86_64-linux";
 			specialArgs = {inherit inputs;}; 
 			modules = [
 				./configuration.nix {
 					nixpkgs.config.allowUnfree = true;
-					nixpkgs.overlays = [vscode-insiders.overlays.default];
+					nixpkgs.overlays = [];
 				}
 
 				home-manager.nixosModules.home-manager {
@@ -43,7 +40,7 @@
 					home.username = "hamza";
 					home.homeDirectory = "/home/hamza";
 					nixpkgs.config.allowUnfree = true;
-					nixpkgs.overlays = [vscode-insiders.overlays.default];
+					nixpkgs.overlays = [];
 				}
 			];
 		};

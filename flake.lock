@@ -156,8 +156,7 @@
         "home-manager": "home-manager",
         "nixcord": "nixcord",
         "nixpkgs": "nixpkgs_2",
-        "nixpkgs-unstable": "nixpkgs-unstable",
-        "vscode-insiders": "vscode-insiders"
+        "nixpkgs-unstable": "nixpkgs-unstable"
       }
     },
     "treefmt-nix": {
@@ -178,26 +177,6 @@
       "original": {
         "owner": "numtide",
         "repo": "treefmt-nix",
-        "type": "github"
-      }
-    },
-    "vscode-insiders": {
-      "inputs": {
-        "nixpkgs": [
-          "nixpkgs"
-        ]
-      },
-      "locked": {
-        "lastModified": 1789633551,
-        "narHash": "sha256-8Pp34ZRhV99aNx/MKH7MFC4DNGhHtEAF2C0R2MuhVCo=",
-        "owner": "auguwu",
-        "repo": "vscode-insiders-nix",
-        "rev": "baa79292a81ab9094d55687af7df637392a6a3cd",
-        "type": "github"
-      },
-      "original": {
-        "owner": "auguwu",
-        "repo": "vscode-insiders-nix",
         "type": "github"
       }
     }

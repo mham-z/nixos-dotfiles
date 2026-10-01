@@ -130,11 +130,6 @@
 		};
 	};
 	
-	programs.vscode = {
-		enable = true;
-		package = pkgs.vscode-insiders;
-	};
-
 	xdg.enable = true;
 	xdg.terminal-exec = {
 		enable = true;
