@@ -1,12 +1,18 @@
 {config, lib, pkgs, ...}: {
-	nix.settings.experimental-features = [ "nix-command" "flakes" ];
-	nix.settings.auto-optimise-store = true;
+	nix.settings = {
+		experimental-features = [ "nix-command" "flakes" "dynamic-derivations" ];
+		auto-optimise-store = true;
+	};
 
 	nix.gc = {
 		automatic = true;
 		dates = "weekly";
 		options = "--delete-older-than 30d";
 	};
+
+	documentation.enable = false;
+	documentation.nixos.enable = false;
+	documentation.man.enable = false;
 
 	imports = [./hardware-configuration.nix];
 
