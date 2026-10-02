@@ -16,16 +16,10 @@
 
 	imports = [./hardware-configuration.nix];
 
-	boot.loader.systemd-boot.enable = false;
+	boot.loader.systemd-boot.enable = true;
 	boot.loader.efi.canTouchEfiVariables = true;
+	boot.loader.systemd-boot.consoleMode = "1";
 	boot.loader.efi.efiSysMountPoint = "/boot";
-
-	boot.loader.grub = {
-		enable = true;
-		efiSupport = true;
-		device = "nodev";
-		useOSProber = true;
-	};
 
 	boot.kernelPackages = pkgs.linuxKernel.packages.linux_6_12;
 	boot.kernel.sysctl."kernel.sysrq" = 502;
