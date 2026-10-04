@@ -81,6 +81,9 @@
 			whoReacted.enable = true;
 			youtubeAdblock.enable = true;
 			gameActivityToggle.enable = true;
+			addAttachments.enable = true;
+			betterImageEditor.enable = true;
+			voiceMessagesInBackground.enable = true;
 		};
 	};
 }
