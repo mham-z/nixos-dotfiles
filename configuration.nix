@@ -210,20 +210,36 @@
 		dnsmasq
 		desktop-file-utils
 
-		(pkgs.writeScriptBin "dgpu-mode" ''
+		(pkgs.writeScriptBin "default-mode" ''
 		#!/bin/sh
-		sudo modprobe think-lmi
-		echo "DiscreteGfx" | sudo tee /sys/class/firmware-attributes/thinklmi/attributes/GraphicsDevice/current_value
-		sudo ${pkgs.grub2}/bin/grub-reboot 0
-		echo "Discrete graphics mode is active. You may reboot now for the changes to take effect."
+		if [ "$(id -u)" -ne 0 ]; then
+			exec sudo "$0" "$@"
+		fi
+	
+		modprobe think-lmi
+		echo "DiscreteGfx" > /sys/class/firmware-attributes/thinklmi/attributes/GraphicsDevice/current_value
+		
+		echo "Discrete mode active. Rebooting in 3s... (<C-c> to cancel)"
+		sleep 3
+
+		TARGET_ENTRY=$(bootctl list | grep -o 'nixos-generation-[0-9]*.conf' | head -n1)
+		systemctl reboot --boot-loader-entry="$TARGET_ENTRY"
 		'')
 
-		(pkgs.writeScriptBin "igpu-mode" ''
+		(pkgs.writeScriptBin "mobile-mode" ''
 		#!/bin/sh
-		sudo modprobe think-lmi
-		echo "SwitchableGfx" | sudo tee /sys/class/firmware-attributes/thinklmi/attributes/GraphicsDevice/current_value
-		sudo ${pkgs.grub2}/bin/grub-reboot 1
-		echo "Integrated graphics mode is active. You may reboot now for the changes to take effect."
+		if [ "$(id -u)" -ne 0 ]; then
+			exec sudo "$0" "$@"
+		fi
+
+		modprobe think-lmi
+		echo "SwitchableGfx" > /sys/class/firmware-attributes/thinklmi/attributes/GraphicsDevice/current_value
+		
+		echo "Mobile mode active. Rebooting in 3s... (<C-c> to cancel)"
+		sleep 3
+
+		TARGET_ENTRY=$(bootctl list | grep -o 'nixos-generation-.*-mobile-mode.conf' | head -n1)
+		systemctl reboot --boot-loader-entry="$TARGET_ENTRY"
 		'')
 	];
 
