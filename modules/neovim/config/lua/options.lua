@@ -28,3 +28,13 @@ vim.api.nvim_create_autocmd('TextYankPost', {
 		vim.hl.on_yank()
 	end;
 })
+
+vim.api.nvim_create_autocmd("BufWritePost", {
+	group = vim.api.nvim_create_augroup("RojoSourcemap", {clear = true}),
+	pattern = {"*.luau"},
+	callback = function()
+		if vim.fn.filereadable("default.project.json") == 1 then
+			vim.fn.jobstart {"rojo", "sourcemap", "default.project.json", "--output", "sourcemap.json" }
+		end
+	end,
+})

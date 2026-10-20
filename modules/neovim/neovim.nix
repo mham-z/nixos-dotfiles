@@ -27,6 +27,7 @@
 		extraPackages = with pkgs; [
 			lua-language-server
 			luau-lsp
+			rojo
 			nil
 			clang-tools
 			basedpyright

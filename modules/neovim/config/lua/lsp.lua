@@ -7,7 +7,22 @@ local LSP = {
 	luau_lsp = { -- luau
 		cmd = {"luau-lsp", "lsp"};
 		filetypes = {"luau"};
-		root_markers = {".luaurc", "rokit.toml", ".git"};
+		root_markers = {".luaurc", "rokit.toml", "default.project.json", ".git"};
+		settings = {
+			["luau-lsp"] = {
+				platform = {
+					type = "roblox";
+				};
+				sourcemap = {
+					enabled = true;
+					autogenerate = true;
+					rojoPath = "rojo";
+					rojoProjectFile = "default.project.json";
+					includeNonScripts = true;
+					sourcemapFile = "sourcemap.json";
+				};
+			};
+		};
 	};
 	nil_ls = { -- nix
 		cmd = {"nil"};
