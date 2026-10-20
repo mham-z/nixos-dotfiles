@@ -29,6 +29,30 @@
 	hardware.bluetooth.enable = true;
 	hardware.bluetooth.powerOnBoot = true;
 
+	boot.extraModprobeConfig = ''
+		options thinkpad_acpi fan_control=1 experimental=1
+	'';
+
+	services.thinkfan = {
+		enable = true;
+		sensors = [
+			{type = "tpacpi"; query = "/proc/acpi/ibm/thermal";}
+		];
+		fans = [
+			{type = "tpacpi"; query = "/proc/acpi/ibm/fan";}
+		];
+	
+		levels = [
+		# [LEVEL  LOW_LIMIT  HIGH_LIMIT]
+			[0        0          45]
+			[1        40         55]
+			[3        50         66]
+			[5        60         74]
+			[7        68         79]
+			[127      74      32767]
+		];
+	};
+	
 	hardware.graphics = {
 		enable = true;
 		enable32Bit = true;
