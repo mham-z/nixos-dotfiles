@@ -234,6 +234,10 @@
 		dnsmasq
 		desktop-file-utils
 
+		SDL2
+		hidapi
+		antimicrox
+
 		(pkgs.writeScriptBin "default-mode" ''
 		#!/bin/sh
 		if [ "$(id -u)" -ne 0 ]; then
@@ -290,6 +294,7 @@
 		dedicatedServer.openFirewall = true;
 		localNetworkGameTransfers.openFirewall = true;
 	};
+	hardware.steam-hardware.enable = true;
 
 	programs.zsh = {
 		enable = true;
