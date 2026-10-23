@@ -29,5 +29,6 @@ in {
 		kdeconnectd = mkAutostart false "KDE Connect Daemon"    "kdeconnectd";
 		kdeconnecti = mkAutostart false "KDE Connect Indicator" "kdeconnect-indicator";
 		antimicrox  = mkAutostart false "AntiMicroX"            "antimicrox --tray";
+		steam       = mkAutostart false "Steam"                 "steam -silent";
 	};
 }
