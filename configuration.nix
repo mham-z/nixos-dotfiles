@@ -75,6 +75,8 @@
 	};
 
 	environment.sessionVariables = {
+		NIXPKGS_ALLOW_UNFREE = "1";
+
 		EDITOR = "nvim";
 		VISUAL = "nvim";
 		PAGER = "less";
@@ -323,6 +325,14 @@
 			
 			zstyle ':completion:*' matcher-list 'm:{a-z}={A-Z}'
 			autoload -Uz compinit && compinit
+			
+			nr() {
+				if [ -z "$1" ]; then
+					echo "Usage: nr <package_name> [arguments]"
+					return 1
+				fi
+				nix run "nixpkgs#$1" -- "''${@[2,-1]}"
+			}
 		'';
 
 		shellAliases = {
