@@ -230,6 +230,8 @@
 		aria2
 		python3
 		lmstudio
+		chromium
+		ghidra
 		uv
 		psmisc
 
