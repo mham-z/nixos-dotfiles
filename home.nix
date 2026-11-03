@@ -64,6 +64,7 @@
 		./modules/foot/foot.nix
 		./modules/nixcord/nixcord.nix
 		./modules/neovim/neovim.nix
+		./modules/xwl-icewm/xwl-icewm.nix
 		./modules/autostart.nix
 	];
 	
