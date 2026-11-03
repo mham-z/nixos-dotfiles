@@ -21,6 +21,7 @@ in {
 		wlsunset    = mkAutostart true  "wlsunset"              "wlsunset -l 25 -L 67";
 		footserver  = mkAutostart true  "Foot Server"           "foot --server";
 		alarm-clock = mkAutostart true  "alarm-clock"           "alarm-clock-applet --hidden";
+		budslink    = mkAutostart true  "BudsLink"              "flatpak run io.github.maniacx.BudsLink --gapplication-service";
 
 		zen         = mkAutostart false "Zen Browser"           "flatpak run app.zen_browser.zen";
 		vesktop     = mkAutostart false "Equibop"               "equibop";

@@ -1,0 +1,45 @@
+#!/usr/bin/env bash
+
+INTERFACE="io.github.maniacx.BudsLink.Device"
+
+DEVICE_PATH=$(busctl --user tree io.github.maniacx.BudsLink 2>/dev/null | grep -o '/io/github/maniacx/BudsLink/Devices/hci0/dev_[A-Z0-9_]*' | head -n 1)
+
+if [ -n "$DEVICE_PATH" ]; then
+    raw_state=$(busctl --user get-property io.github.maniacx.BudsLink "$DEVICE_PATH" "$INTERFACE" State | sed 's/^s "//;s/"$//;s/\\"/\"/g')
+    
+    l_val=$(echo "$raw_state" | jq -r 'if .battery1Status == "disconnected" then "N/A" else .battery1Level // "N/A" end')
+    r_val=$(echo "$raw_state" | jq -r 'if .battery2Status == "disconnected" then "N/A" else .battery2Level // "N/A" end')
+    c_val=$(echo "$raw_state" | jq -r 'if .battery3Status == "disconnected" then "N/A" else .battery3Level // "N/A" end')
+
+    l_status=$(echo "$raw_state" | jq -r '.battery1Status // empty')
+    r_status=$(echo "$raw_state" | jq -r '.battery2Status // empty')
+    c_status=$(echo "$raw_state" | jq -r '.battery3Status // empty')
+
+    if [ "$l_val" = "N/A" ]; then
+        l_str="N/A"
+    elif [ "$l_status" = "charging" ]; then
+        l_str="+${l_val}%"
+    else
+        l_str="${l_val}%"
+    fi
+
+    if [ "$r_val" = "N/A" ]; then
+        r_str="N/A"
+    elif [ "$r_status" = "charging" ]; then
+        r_str="+${r_val}%"
+    else
+        r_str="${r_val}%"
+    fi
+
+    if [ "$c_val" = "N/A" ]; then
+        c_str="N/A"
+    elif [ "$c_status" = "charging" ]; then
+        c_str="+${c_val}%"
+    else
+        c_str="${c_val}%"
+    fi
+
+    echo "L ${l_str} - R ${r_str} - C ${c_str}"
+else
+    echo "L N/A ⁃ R N/A - C N/A"
+fi

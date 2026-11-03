@@ -121,6 +121,11 @@ tooltip label {
 	color: @nord14;
 }
 
+/* EARBUDS */
+#custom-earbuds {
+	color: @nord13;
+}
+
 /* BLUETOOTH */
 #bluetooth {
 	color: @nord13;

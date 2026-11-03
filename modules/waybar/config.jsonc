@@ -47,6 +47,8 @@
 			"custom/s-rose",
 			"backlight",
 			"custom/s-gray",
+			"custom/earbuds",
+			"custom/s-yellow",
 			"bluetooth",
 			"custom/s-yellow",
 			"network#wlan",
@@ -188,6 +190,11 @@
 		"backlight": {
 			"format": "󰃞 {percent}%",
 			"min-brightness": 1
+		},
+		"custom/earbuds": {
+			"exec": "~/dotfiles/scripts/earbuds-waybar",
+			"interval": 1,
+			"format": "{}"
 		},
 		"bluetooth": {
 			"format": "󰂯 {status}",
