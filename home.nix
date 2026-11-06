@@ -52,6 +52,8 @@
 		(texlive.combine {
 			inherit (texlive) scheme-medium standalone scontents;
 		})
+
+		vscodium
 	];
 	fonts.fontconfig.enable = true;
 
