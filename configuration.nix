@@ -388,6 +388,11 @@
 	};
 	programs.virt-manager.enable = true;
 
+	virtualisation.waydroid = {
+		enable = true;
+		package = pkgs.waydroid-nftables;
+	};
+
 	programs.tmux.enable = true;
 	programs.screen.enable = true;
 	
