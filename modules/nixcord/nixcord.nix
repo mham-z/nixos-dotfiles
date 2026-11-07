@@ -84,6 +84,9 @@
 			addAttachments.enable = true;
 			betterImageEditor.enable = true;
 			voiceMessagesInBackground.enable = true;
+			noProfileThemes.enable = true;
+			noNitroUpsell.enable = true;
+			equibopStreamFixes.enable = true;
 		};
 	};
 }
