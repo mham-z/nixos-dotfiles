@@ -404,6 +404,8 @@
 	networking.firewall.allowedUDPPorts = [];
 	networking.firewall.trustedInterfaces = ["virbr0"];
 
+	programs.nix-ld.enable = true;
+
 	system.stateVersion = "26.05"; # DO NOT CHANGE
 }
 
