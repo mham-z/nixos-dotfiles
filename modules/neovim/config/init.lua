@@ -1,12 +1,12 @@
 local PLUGINS = {
 	"nord";
 	"neo-tree";
-	"lualine";
+	-- "lualine";
 	"gitsigns";
 	"neogit";
 	"telescope";
 	"spectre";
-	"cord";
+	-- "cord";
 	"blink";
 	"ccc";
 	"treesitter";
@@ -22,4 +22,4 @@ for _, name in ipairs(PLUGINS) do
 	require("plugins."..name)
 end
 
-require("lsp")
+-- require("lsp")

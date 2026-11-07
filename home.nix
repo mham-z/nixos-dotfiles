@@ -54,6 +54,13 @@
 		})
 
 		vscodium
+		lua-language-server
+		luau-lsp
+		rojo
+		nil
+		clang-tools
+		basedpyright
+		texlab
 	];
 	fonts.fontconfig.enable = true;
 
