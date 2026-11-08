@@ -1,10 +1,10 @@
-{pkgs, ...}: {
+{ pkgs, ... }: {
 	home.packages = with pkgs; [
 		icewm
 
-
 		(pkgs.writeScriptBin "x" ''
 			#!/bin/sh
+			trap 'kill "$XWAYLAND_PID" 2>/dev/null; exit' INT TERM
 
 			find_free_display() {
 				for d in $(seq 10 99); do
@@ -13,7 +13,6 @@
 						return 0
 					fi
 				done
-
 				echo ""
 				return 1
 			}
@@ -31,17 +30,14 @@
 				Xwayland "$TARGET_DISPLAY" &
 				XWAYLAND_PID=$!
 
-				echo "Waiting for display..."
-
 				while [ ! -e "/tmp/.X11-unix/X''${TARGET_DISPLAY#:}" ]; do
 					sleep 0.1
 				done
 
 				DISPLAY="$TARGET_DISPLAY" icewm
-				kill "$XWAYLAND_PID" 2>/dev/null
 			}
 
-			run_session &
+			run_session
 		'')
 	];
 }
