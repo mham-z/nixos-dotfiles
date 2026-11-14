@@ -1,0 +1,13 @@
+MouseWinMove="Alt+Pointer_Button1"
+MouseWinSize="Alt+Pointer_Button3"
+
+KeySysMenu="Alt+Escape"
+KeySysWindowList="Ctrl+Alt+Escape"
+
+KeySysRun="Alt+d"
+
+KeyWinClose="Alt+c"
+
+Win95Keys=0
+
+KeyWinMenu=""

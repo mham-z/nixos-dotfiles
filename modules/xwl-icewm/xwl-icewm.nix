@@ -1,6 +1,9 @@
 { pkgs, ... }: {
 	home.packages = with pkgs; [
 		icewm
+		rofi
+		xterm
+		xclock
 
 		(pkgs.writeScriptBin "x" ''
 			#!/bin/sh
@@ -34,10 +37,17 @@
 					sleep 0.1
 				done
 
-				DISPLAY="$TARGET_DISPLAY" icewm
+				export DISPLAY="$TARGET_DISPLAY"
+				unset WAYLAND_DISPLAY
+				icewm
 			}
 
 			run_session
 		'')
 	];
+
+	home.file.".icewm" = {
+    source = ./configs;
+    recursive = true;
+  };
 }
