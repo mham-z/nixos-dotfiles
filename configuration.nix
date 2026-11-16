@@ -403,6 +403,10 @@
 	networking.firewall.allowedTCPPorts = [5900];
 	networking.firewall.allowedUDPPorts = [];
 	networking.firewall.trustedInterfaces = ["virbr0"];
+	networking.firewall.checkReversePath = "loose";
+
+	services.mullvad-vpn.enable = true;
+	services.resolved.enable = true;
 
 	programs.nix-ld.enable = true;
 
